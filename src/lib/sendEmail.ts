@@ -20,21 +20,14 @@ export async function sendEmail(formData: FormData) {
         },
     });
 
-    try {
-        await transporter.sendMail({
-            from: `"Paykilla Lending" <${process.env.SMTP_USER}>`,
-            to: process.env.CONTACT_RECEIVER_EMAIL,
-            subject: "New Contact Message",
-            html: `
-                <p><strong>Name:</strong> ${name}</p>
-                <p><strong>Email:</strong> ${email}</p>
-                <p><strong>Message:</strong><br/>${message}</p>
-            `,
-        });
-
-        return { success: true };
-    } catch (error) {
-        console.log(error);
-        throw new Error("Failed to send email");
-    }
+    await transporter.sendMail({
+        from: `"Paykilla Lending" <${process.env.SMTP_USER}>`,
+        to: process.env.CONTACT_RECEIVER_EMAIL,
+        subject: "New Contact Message",
+        html: `
+            <p><strong>Name:</strong> ${name}</p>
+            <p><strong>Email:</strong> ${email}</p>
+            <p><strong>Message:</strong><br/>${message}</p>
+        `,
+    });
 }

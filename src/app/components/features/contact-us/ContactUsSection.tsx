@@ -3,7 +3,6 @@
 import clsx from "clsx";
 import { useEffect, useState } from "react";
 import { useForm } from "react-hook-form";
-import { sendEmail } from "@lib";
 
 import { FormData, StatusModalType } from "@t";
 
@@ -30,17 +29,25 @@ export const ContactUsSection = () => {
 
     const onSubmit = async (data: FormData) => {
         try {
-            await sendEmail({
-                name: data.name,
-                email: data.email,
-                message: data.message,
-                consent: data.consent,
+            const response = await fetch("/api/contact", {
+                method: "POST",
+                body: JSON.stringify(data),
+                headers: {
+                    "Content-Type": "application/json",
+                },
             });
 
-            setStatusModal(successModal);
-            reset();
+            const result = await response.json();
+
+            if (result.success) {
+                setStatusModal(successModal);
+                reset();
+            } else {
+                console.error("Server error:", result.error);
+                setStatusModal(errorModal);
+            }
         } catch (error) {
-            console.error(error);
+            console.error("Sending error:", error);
             setStatusModal(errorModal);
         }
     };
