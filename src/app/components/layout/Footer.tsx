@@ -20,8 +20,8 @@ export const Footer = () => {
             <div className="container">
                 <div
                     className={clsx(
-                        "mb-[39px] flex items-start justify-between gap-x-[64px] pl-[2px] xl:mb-[3px] xl:pl-0 lg:gap-x-[32px] tb:mb-[33px]",
-                        "sm:mb-[39px] sm:block"
+                        "mb-[69px] flex items-start justify-between gap-x-[64px] pl-[2px] xl:mb-[24px] xl:pl-0 lg:gap-x-[32px]",
+                        "sm:mb-[44px] sm:block"
                     )}
                 >
                     <p className="text-t-white sm:mb-[30px]">
@@ -36,14 +36,14 @@ export const Footer = () => {
                         items={footerMenu}
                         twoColumns
                     />
-                    <Button href={process.env.NEXT_PUBLIC_BUTTONS_URL} className="xl:mt-[7px] tb:mt-0">
+                    <Button href={process.env.NEXT_PUBLIC_BUTTONS_GET_STARTED_URL} className="xl:mt-[7px] tb:mt-0">
                         GET STARTED
                     </Button>
                 </div>
             </div>
             <div className="max-w-[1920px] mx-auto">
                 <Animated.Div initial={{ y: "100%" }} animate={isInView ? { y: 0 } : false} transition={{ duration: 1 }}>
-                    <Logo type="footer" className="mb-[-4%] ml-[2px] w-full xl:ml-0 sm:mb-[-2.8%]" />
+                    <Logo type="footer" className="mb-[-2.7%] ml-[2px] w-full xl:ml-0 sm:mb-[-2.8%]" />
                 </Animated.Div>
             </div>
         </footer>

@@ -11,7 +11,7 @@ export const solutions = [
         text: "Integrate advanced crypto infrastructure to&nbsp;power innovative fintech solutions",
         image: "homepage/solutions/financial.png",
         imageAlt: "Image",
-        imageAspect: 583 / 620,
+        imageAspect: 17 / 22,
     },
     {
         label: "And much more",
@@ -21,7 +21,7 @@ export const solutions = [
         imageAspect: 521 / 543,
     },
     {
-        label: "E-commerce & Retail",
+        label: "E-commerce &&nbsp;Retail",
         text: "Boost sales by&nbsp;offering crypto payment options to&nbsp;a&nbsp;global customer base",
         image: "homepage/solutions/e-commerce.png",
         imageAlt: "Image",

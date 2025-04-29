@@ -7,5 +7,6 @@ export type ButtonProps = {
     isLoading?: boolean;
     children: ReactNode;
     type?: "button" | "submit" | "reset";
+    action?: "secondary" | "primary";
 } & (AnchorHTMLAttributes<HTMLAnchorElement> | ButtonHTMLAttributes<HTMLButtonElement>) &
     ClassNameProp;

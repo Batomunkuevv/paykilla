@@ -22,7 +22,7 @@ const createAnimatedComponent = (Tag: ElementType) => {
             );
         }
 
-        const MotionTag = motion(Tag);
+        const MotionTag = motion.create(Tag);
 
         return (
             <MotionTag

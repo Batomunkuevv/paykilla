@@ -68,7 +68,7 @@ export const Preloader = () => {
         >
             <div className="container">
                 <div className="mr-[-8px] flex justify-between items-end md:mr-0">
-                    <Logo className="w-full max-w-[326px] md:max-w-[240px] tb:max-w-[220px] sm:max-w-[160px] xs:max-w-[120px]" />
+                    <Logo className="w-full max-w-[326px] md:max-w-[240px] tb:max-w-[220px] sm:max-w-[160px] xs:max-w-[140px]" />
                     <div className="mb-[20px] h-[165px] overflow-hidden md:mb-0 md:h-[132px] tb:h-[100px] sm:h-[80px] xs:h-[48px]">
                         <div
                             className="flex flex-col items-end transition-transform duration-300"

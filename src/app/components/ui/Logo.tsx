@@ -9,5 +9,5 @@ export const Logo = ({ className, type = "black" }: LogoProps) => {
         footer: "logo-footer.svg",
     };
 
-    return <ResponsiveImage className={className} src={logoSrcObject[type]} alt="Paykilla logo" title="Paykilla logo" aspectRatio={130 / 40}></ResponsiveImage>;
+    return <ResponsiveImage className={className} src={logoSrcObject[type]} alt="Paykilla logo" title="Paykilla logo" aspectRatio={175 / 45}></ResponsiveImage>;
 };

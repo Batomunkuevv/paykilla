@@ -48,7 +48,7 @@ export const DeveloperDocsSection = () => {
                                 Docs&nbsp;&amp;{" "}
                             </Animated.Span>
                         </span>
-                        <span className="pb-[16px] mb-[-16px] block w-fit ml-auto overflow-hidden tb:m-0 tb:p-0 tb:overflow-visible sm:inline">
+                        <span className="pb-[19px] mb-[-19px] block w-fit ml-auto overflow-hidden tb:m-0 tb:p-0 tb:overflow-visible sm:inline">
                             <Animated.Span
                                 className="block"
                                 initial={{ y: "100%" }}
@@ -76,7 +76,9 @@ export const DeveloperDocsSection = () => {
                                 animate={isInView ? { y: 0 } : false}
                                 transition={{ duration: 0.5, delay: 1 }}
                             >
-                                <Button href="#">VIEW API DOCS</Button>
+                                <Button href="https://paykilla.readme.io/reference/get-started-with-api" target="_blank">
+                                    VIEW API DOCS
+                                </Button>
                             </Animated.Div>
                         </div>
                     </div>

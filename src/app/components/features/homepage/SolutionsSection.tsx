@@ -17,7 +17,8 @@ const solutions = [...originalSolutions, ...originalSolutions];
 export const SolutionsSection = () => {
     const [activeIndex, setActiveIndex] = useState(0);
 
-    const sectionRef = useRef(null);
+    const sectionRef = useRef<HTMLElement | null>(null);
+    const contentRef = useRef<HTMLDivElement | null>(null);
     const swiperRef = useRef<SwiperCore | null>(null);
     const bigTextRef = useRef<HTMLSpanElement>(null);
 
@@ -102,7 +103,7 @@ export const SolutionsSection = () => {
                                         >
                                             <span
                                                 className={clsx(
-                                                    "relative  block text-[46px] leading-[210.86%] font-medium whitespace-nowrap z-10 transition-all duration-700",
+                                                    "relative block text-[46px] leading-[210.86%] font-medium whitespace-nowrap z-10 transition-all duration-700",
                                                     "2xl:text-[40px] 2x:text-[242.5%]",
                                                     "sm:translate-y-0 sm:opacity-100 sm:text-[18px] sm:leading-[194.44%]",
                                                     {
@@ -113,9 +114,8 @@ export const SolutionsSection = () => {
                                                         "translate-y-0": isActive,
                                                     }
                                                 )}
-                                            >
-                                                {tab.label}
-                                            </span>
+                                                dangerouslySetInnerHTML={{ __html: tab.label }}
+                                            ></span>
                                             <motion.span
                                                 ref={isActive ? bigTextRef : null}
                                                 initial={{ opacity: 0, scale: 0.2 }}
@@ -130,16 +130,18 @@ export const SolutionsSection = () => {
                                                         "transform-scale": isActive,
                                                     }
                                                 )}
-                                            >
-                                                {tab.label}
-                                            </motion.span>
+                                                dangerouslySetInnerHTML={{ __html: tab.label }}
+                                            ></motion.span>
                                         </button>
                                     </SwiperSlide>
                                 );
                             })}
                         </Swiper>
                     </div>
-                    <div className="ml-[-12%] relative z-[20] flex-1 self-end xl:ml-[-19.2%] xl:max-w-[50%] lg:ml-[-25%] md:max-w-[60%] tb:max-w-[unset] sm:m-0">
+                    <div
+                        ref={contentRef}
+                        className="pointer-events-none ml-[-12%] relative z-[20] flex-1 self-end xl:ml-[-19.2%] xl:max-w-[50%] lg:ml-[-10%] md:max-w-[60%] tb:max-w-[unset] tb:ml-[-25.2%] sm:m-0"
+                    >
                         <AnimatePresence mode="wait">
                             {solutions.map((solution, index) => {
                                 const originalLength = originalSolutions.length;
@@ -159,15 +161,26 @@ export const SolutionsSection = () => {
                                             animate={{ opacity: 1 }}
                                             exit={{ opacity: 0 }}
                                             transition={{ duration: 0.5, ease: "easeInOut" }}
-                                            className={clsx("sm:p-0", { "pl-[8%] xl:pl-[14.3%] md:pl-[10%]": isSubscription }, { "md:pl-[10%]": isEcommerce })}
+                                            className={clsx(
+                                                "sm:p-0",
+                                                { "pl-[8%] xl:pl-[14.3%] md:pl-[10%]": isSubscription },
+                                                { "md:pl-[10%]": isEcommerce },
+                                                { "md:pl-[10%]": isFinancial }
+                                            )}
                                         >
-                                            <h3 className="mb-[20px] h2 hidden sm:block">{solution.label}</h3>
+                                            <h3
+                                                className="mb-[20px] h2 hidden sm:block xs:text-[48px]"
+                                                dangerouslySetInnerHTML={{ __html: solution.label }}
+                                            ></h3>
                                             <p
                                                 className={clsx(
                                                     "relative z-[1] mx-auto max-w-[300px] xl:mr-[113px] xl:max-w-[230px] md:mr-[30px] sm:mr-0 sm:ml-0 sm:max-w-[183px] sm:mb-[15px]",
-                                                    { "mb-[9px] left-[3px] max-w-[265px] xl:mb-[39px] xl:left-0 md:mb-[20px]": isGaming },
+                                                    {
+                                                        "mb-[9px] left-[3px] max-w-[265px] xl:mb-[39px] xl:left-0 md:mb-[20px] md:left-[3px] sm:left-0":
+                                                            isGaming,
+                                                    },
                                                     { "mb-[48px] xs:mb-[76px]": isMore },
-                                                    { "xl:mb-[-53px] lg:mb-[-32px]": isFinancial },
+                                                    { "mb-[24px]": isFinancial },
                                                     { "mb-[-48px] xl:mb-[-26px]": isEcommerce },
                                                     { "mb-[37px] xl:mb-[36px] xs:mb-[58px]": isSubscription }
                                                 )}
@@ -181,7 +194,7 @@ export const SolutionsSection = () => {
                                                             isGaming,
                                                     },
                                                     {
-                                                        "mb-[-17%] xl:mb-[-17.1%] xl:ml-[-12.4%] xl:translate-x-[6%]": isFinancial,
+                                                        "mb-[-10.3%] ml-[24.4%] translate-x-[-14.7%] sm:max-w-[70%]": isFinancial,
                                                     },
                                                     { "mb-[-25%] xl:mb-[-21%] xl:translate-x-[4.6%] sm:mb-[-18%] sm:translate-x-[20%]": isMore },
                                                     {

@@ -13,6 +13,7 @@ export const FaqSection = () => {
     const [isOpenChat, setIsOpenChat] = useState(false);
     const [currentFaq, setCurrentFaq] = useState<FaqItemType | null>(null);
 
+    const sectionRef = useRef<HTMLDivElement | null>(null);
     const wrapperRef = useRef<HTMLDivElement | null>(null);
     const bodyRef = useRef<HTMLDivElement | null>(null);
     const chatRef = useRef<HTMLDivElement | null>(null);
@@ -47,6 +48,12 @@ export const FaqSection = () => {
         wrapper.addEventListener("transitionend", wrapperTransitionEnd);
     };
 
+    const scrollToFaqTop = () => {
+        if (!sectionRef.current) return;
+
+        sectionRef.current.scrollIntoView();
+    };
+
     const updateWrapperHeight = useCallback(() => {
         const wrapper = wrapperRef.current;
         const chat = chatRef.current;
@@ -67,10 +74,14 @@ export const FaqSection = () => {
 
     useEffect(() => {
         updateWrapperHeight();
+
+        if (currentFaq) {
+            scrollToFaqTop();
+        }
     }, [currentFaq, updateWrapperHeight]);
 
     return (
-        <section id="faq" className="section xl:pt-[17px] md:p-0 sm:mt-[-6px]">
+        <section ref={sectionRef} id="faq" className="section xl:pt-[17px] md:p-0 sm:mt-[-6px]">
             <div className="container">
                 <h2 className="mb-[50px] subheading tb:mb-[40px] sm:mb-[30px]">
                     <span className="text-t-orange">[8]</span> FAQ
@@ -87,7 +98,7 @@ export const FaqSection = () => {
                                     faq={faq}
                                 />
                             ))}
-                        <Button href={process.env.NEXT_PUBLIC_BUTTONS_URL} className="m-auto md:col-[2/3] xs:mt-[20px] xs:order-[2]">
+                        <Button href={process.env.NEXT_PUBLIC_BUTTONS_GET_STARTED_URL} className="m-auto md:col-[2/3] xs:mt-[20px] xs:order-[2]">
                             GET STARTED
                         </Button>
                         {lastFaq && (

@@ -6,7 +6,7 @@ import { useAnimations } from "@hooks";
 import { headerMenu } from "@/data";
 
 import Link from "next/link";
-import { Button, ButtonSecondary, ResponsiveImage, BlurBall, Animated } from "@components";
+import { Button, ResponsiveImage, BlurBall, Animated } from "@components";
 
 export const HeroSection = () => {
     const { startAnimations } = useAnimations();
@@ -44,7 +44,7 @@ export const HeroSection = () => {
                             <span>POWER</span>
                         </Animated.Div>
                     </div>
-                    <nav className="relative flex-none max-w-[460px] grid grid-cols-[1fr_1.33fr] gap-x-[41px] xl:gap-x-[22px] xl:max-w-[336px] lg:hidden">
+                    <nav className="relative flex-none max-w-[460px] grid grid-cols-[1fr_1.33fr] gap-x-[41px] xl:gap-x-[22px] xl:max-w-[336px] tb:hidden">
                         {firstMenuCol && (
                             <ul>
                                 {firstMenuCol.map((item, i) => (
@@ -75,7 +75,7 @@ export const HeroSection = () => {
                         )}
                     </nav>
                 </div>
-                <div className="mr-[-80px] h1 2xl:mr-[-15px] tb:mt-[9px] tb:ml-[-9px] tb:mr-0 tb:mb-[21px] tb:max-w-[88%] sm:mt-[10px] sm:ml-0 sm:mb-[8px] overflow-hidden">
+                <div className="pb-[9px] mr-[-80px] mb-[-9px] h1 overflow-hidden 2xl:mr-[-15px] tb:pb-0 tb:mt-[9px] tb:ml-[-9px] tb:mr-0 tb:mb-[21px] tb:max-w-[88%] sm:mt-[10px] sm:ml-0 sm:mb-[8px] sm:overflow-visible">
                     <Animated.Div initial={{ y: "100%" }} animate={startAnimations ? { y: 0 } : {}} transition={{ duration: 0.5, delay: 1 }}>
                         YOUR <span className="sm:ml-[-5px]">BUSINESS</span>
                     </Animated.Div>
@@ -98,7 +98,7 @@ export const HeroSection = () => {
                             "pl-[18px] mt-[-84px] mr-auto mb-[-110px] w-full max-w-[591px] flex items-start xl:mt-[-94px] xl:ml-[-118px] xl:mb-[-96px] xl:pl-[0] xl:mr-0 xl:max-w-[524px] lg:mt-[-56px] md:ml-[-90px] md:max-w-[480px]",
                             "tb:absolute tb:top-[76px] tb:right-0 tb:translate-x-[6.5%] tb:max-w-[311px]",
                             "sm:top-[27%] sm:w-[40%] sm:max-w-[220px]",
-                            "xs:w-full xs:max-w-[201px] xs:top-[13.9%] xs:right-0 xs:translate-x-[39%] xs:flex-col xs:gap-[8px]"
+                            "xs:w-full xs:max-w-[201px] xs:top-[10.9%] xs:right-0 xs:translate-x-[39%] xs:flex-col xs:gap-[8px]"
                         )}
                     >
                         <Animated.Div
@@ -145,15 +145,17 @@ export const HeroSection = () => {
                         </p>
                     </Animated.Div>
                 </div>
-                <div className="mt-[-105px] ml-[-2px] flex items-center gap-[64px] justify-between xl:mt-[-88px] xl:ml-0 tb:mt-0 tb:flex-row-reverse sm:gap-[10px] sm:flex-col-reverse">
+                <div className="mt-[-105px] ml-[-2px] flex items-center gap-[64px] justify-between xl:mt-[-88px] xl:ml-0 tb:mt-0 tb:flex-row-reverse sm:gap-[10px] sm:items-stretch sm:flex-col-reverse">
                     <div className="overflow-hidden">
                         <Animated.Div initial={{ y: 100 }} animate={startAnimations ? { y: 0 } : {}} transition={{ duration: 0.5, delay: 1.7 }}>
-                            <ButtonSecondary href={process.env.NEXT_PUBLIC_BUTTONS_URL || "#"}>DISCOVER MORE</ButtonSecondary>
+                            <Button action="secondary" href={process.env.NEXT_PUBLIC_BUTTONS_CALL_URL}>
+                                BOOK A CALL
+                            </Button>
                         </Animated.Div>
                     </div>
                     <div className="overflow-hidden">
                         <Animated.Div initial={{ y: 100 }} animate={startAnimations ? { y: 0 } : {}} transition={{ duration: 0.5, delay: 1.7 }}>
-                            <Button href={process.env.NEXT_PUBLIC_BUTTONS_URL}>BOOK A CALL</Button>
+                            <Button href={process.env.NEXT_PUBLIC_BUTTONS_GET_STARTED_URL}>GET STARTED</Button>
                         </Animated.Div>
                     </div>
                 </div>

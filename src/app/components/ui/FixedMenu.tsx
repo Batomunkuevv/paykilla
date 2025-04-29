@@ -54,7 +54,7 @@ export const FixedMenu = () => {
                 <MenuItem
                     className={clsx(
                         "!m-0 [&_a]:pb-0 [&_a]:border-0 uppercase last:after:hidden relative",
-                        "after:content-'' after:absolute after:top-[2px] after:bottom-[2] after:left-[calc(100%+11px)] after:w-[2px] after:bg-orange"
+                        "after:content-'' after:absolute after:top-[2px] after:bottom-[2px] after:left-[calc(100%+11px)] after:w-[2px] after:bg-orange"
                     )}
                     key={i}
                     isActive={false}

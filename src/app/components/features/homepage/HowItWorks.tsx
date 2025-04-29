@@ -219,7 +219,7 @@ export const HowItWorksSection = () => {
                     <div
                         data-custom-pagination
                         className={clsx(
-                            "mt-[24px] flex justify-center gap-[10px]",
+                            "hidden mt-[24px] justify-center gap-[10px] sm:flex",
                             "[&_.swiper-pagination-bullet]:m-0 [&_.swiper-pagination-bullet]:w-[13px] [&_.swiper-pagination-bullet]:h-[13px]",
                             "[&_.swiper-pagination-bullet]:opacity-100 [&_.swiper-pagination-bullet]:transition-all",
                             "[&_.swiper-pagination-bullet]:duration-500 [&_.swiper-pagination-bullet:not(.swiper-pagination-bullet-active)]:bg-gray [&_.swiper-pagination-bullet-active]:bg-orange"
@@ -228,7 +228,7 @@ export const HowItWorksSection = () => {
                 </Swiper>
                 <div className="overflow-hidden">
                     <Animated.Div initial={{ y: "100%" }} animate={isInView ? { y: 0 } : false} transition={{ duration: 0.5 }}>
-                        <Button href={process.env.NEXT_PUBLIC_BUTTONS_URL} className="mx-auto">
+                        <Button href={process.env.NEXT_PUBLIC_BUTTONS_GET_STARTED_URL} className="mx-auto">
                             GET STARTED
                         </Button>
                     </Animated.Div>

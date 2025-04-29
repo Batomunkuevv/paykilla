@@ -1,6 +1,6 @@
 "use client";
 
-import { useState } from "react";
+import { useState, MouseEvent } from "react";
 import clsx from "clsx";
 
 import { headerMenu } from "@/data";
@@ -20,6 +20,14 @@ export const Burger = ({ className }: ClassNameProp) => {
     const closeMenu = () => {
         setIsOpenMenu(false);
         document.body.style.overflow = "";
+    };
+
+    const handleBurgerBodyClick = (e: MouseEvent) => {
+        const { target } = e;
+
+        if ("nodeName" in target && target.nodeName === "A") {
+            closeMenu();
+        }
     };
 
     return (
@@ -46,13 +54,14 @@ export const Burger = ({ className }: ClassNameProp) => {
                         "py-[34px] px-[20px] ml-auto relative bg-black w-[calc(100%-20px)] max-w-[389px] h-full flex flex-col overflow-auto has-scrollbar",
                         "sm:py-[23px] xs:max-w-[271px]"
                     )}
+                    onClick={handleBurgerBodyClick}
                 >
                     <div className="mb-[40px] flex items-center justify-between gap-x-[32px] sm:mb-[24px]">
-                        <Logo type="white" className="w-full max-w-[130px]" />
+                        <Logo type="white" className="w-full max-w-[175px] sm:max-w-[154px]" />
                         <CloseButton onClick={closeMenu} />
                     </div>
                     <Menu items={headerMenu} className="mb-[64px] text-t-white uppercase" />
-                    <Button href={process.env.NEXT_PUBLIC_BUTTONS_URL} className="mt-auto w-full">
+                    <Button href={process.env.NEXT_PUBLIC_BUTTONS_CALL_URL} className="mt-auto w-full">
                         BOOK A CALL
                     </Button>
                 </div>

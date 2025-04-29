@@ -1,7 +1,6 @@
 export { Preloader } from "./Preloader";
 export { Button } from "./Button";
 export { Burger } from "./Burger";
-export { ButtonSecondary } from "./ButtonSecondary";
 export { ResponsiveImage } from "./ResponsiveImage";
 export { Logo } from "./Logo";
 export { Spinner } from "./Spinner";

@@ -54,9 +54,9 @@ export const ContactUsSection = () => {
     }, [statusModal]);
 
     return (
-        <section className="mt-[-17px] xl:mt-0">
+        <section className="mt-[-19px] xl:mt-[-1px] tb:mt-[-5px] sm:mt-0">
             <div className="container">
-                <Link href="/" className="block max-w-[144px] mb-10 xl:mb-[60px] xl:max-w-[128px] sm:max-w-[130px] sm:mb-[40px]">
+                <Link href="/" className="block max-w-[185px] mb-10 xl:mb-[60px] xl:max-w-[160px] tb:max-w-[175px] sm:max-w-[154px] sm:mb-[40px]">
                     <Logo type="black" />
                 </Link>
                 <div className="flex justify-between gap-[40px] relative tb:flex-col sm:gap-[36px]">
@@ -114,7 +114,7 @@ export const ContactUsSection = () => {
                             />
                             <CheckboxField
                                 className="mt-[-3px]"
-                                label="Your message"
+                                label="I&nbsp;agree to&nbsp;the terms and conditions as&nbsp;set out by&nbsp;the user agreement"
                                 error={errors.consent}
                                 {...register("consent", { required: "Please confirm that you accept the agreement" })}
                             />
