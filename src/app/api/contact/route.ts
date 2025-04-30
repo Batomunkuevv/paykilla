@@ -1,9 +1,10 @@
 import { NextResponse } from "next/server";
-import { sendEmail } from "@lib";
+import { Resend } from "resend";
+
+const resend = new Resend(process.env.RESEND_API_KEY);
 
 const lastSubmissions = new Map<string, number>();
-
-const RATE_LIMIT_WINDOW = 60_000; // 60 секунд
+const RATE_LIMIT_WINDOW = 60_000;
 
 export async function POST(req: Request) {
     const ip = req.headers.get("x-forwarded-for") || "unknown";
@@ -28,11 +29,19 @@ export async function POST(req: Request) {
     }
 
     try {
-        await sendEmail({
-            name,
-            email,
-            message,
-            consent: true,
+        if (!process.env.SMTP_USER || !process.env.CONTACT_RECEIVER_EMAIL) {
+            return NextResponse.json({ success: false, error: "Server misconfiguration: missing env variables." }, { status: 500 });
+        }
+
+        await resend.emails.send({
+            from: `Paykilla <${process.env.SMTP_USER}>`,
+            to: [process.env.CONTACT_RECEIVER_EMAIL],
+            subject: "New contact message",
+            html: `
+                <p><strong>Name:</strong> ${name}</p>
+                <p><strong>Email:</strong> ${email}</p>
+                <p><strong>Message:</strong><br/>${message}</p>
+            `,
         });
 
         lastSubmissions.set(ip, now);
