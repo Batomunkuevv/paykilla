@@ -42,9 +42,8 @@ export const HowItWorksSection = () => {
                     <div className="flex gap-[10px] sm:hidden">
                         <ResponsiveImage
                             className="w-[32px] flex-none animate-curson-moving xl:w-[24px]"
-                            src="icons/cursor.svg"
+                            src="icons/cursor.png"
                             alt="Cursor"
-                            title="Cursor"
                             aspectRatio={1 / 1}
                         />
                         {isMobile ? "Click" : "Hover"} on&nbsp;cards for more info
@@ -79,17 +78,12 @@ export const HowItWorksSection = () => {
                                     <source srcSet="/images/homepage/how-it-works/01-360.png" media="(max-width: 767px)" />
                                     <source srcSet="/images/homepage/how-it-works/01-768.png" media="(max-width: 991px)" />
                                     <source srcSet="/images/homepage/how-it-works/01-1440.png" media="(max-width: 1719px)" />
-                                    <img
-                                        src="/images/homepage/how-it-works/01.png"
-                                        alt="Godzilla"
-                                        title="Godzilla"
-                                        className="absolute inset-0 w-full h-full object-cover"
-                                    />
+                                    <img src="/images/homepage/how-it-works/01.png" alt="Godzilla" className="absolute inset-0 w-full h-full object-cover" />
                                 </picture>
                             </div>
                             <div className="relative z-[2]">
                                 <h3 className="h3 mb-[12px] tb:mb-[10px] sm:mb-[8px]">Sign up</h3>
-                                <p className="max-w-[290px] transition-all duration-500 opacity-0 group-hover:opacity-100 xl:max-w-[216px] tb:max-w-[166px] sm:opacity-100">
+                                <p className="text-t-white max-w-[290px] transition-opacity duration-500 opacity-0 group-hover:opacity-100 xl:max-w-[216px] tb:max-w-[166px] sm:opacity-100">
                                     Create your PayKilla account to&nbsp;access your personalized dashboard
                                 </p>
                             </div>
@@ -132,14 +126,13 @@ export const HowItWorksSection = () => {
                                     <img
                                         src="/images/homepage/how-it-works/02.png"
                                         alt="Godzilla with case"
-                                        title="Godzilla with case"
                                         className="absolute inset-0 w-full h-full object-cover"
                                     />
                                 </picture>
                             </div>
                             <div className="relative z-[2]">
                                 <h3 className="h3 mb-[12px] tb:mb-[10px] sm:mb-[8px]">Integrate</h3>
-                                <p className="max-w-[270px] opacity-0 transition-all duration-500 group-hover:opacity-100 xl:max-w-[216px] tb:max-w-[176px] sm:opacity-100">
+                                <p className="text-t-white max-w-[270px] opacity-0 transition-opacity duration-500 group-hover:opacity-100 xl:max-w-[216px] tb:max-w-[176px] sm:opacity-100">
                                     Seamlessly connect our API to&nbsp;your system with expert&nbsp;guidance
                                 </p>
                             </div>
@@ -183,14 +176,13 @@ export const HowItWorksSection = () => {
                                     <img
                                         src="/images/homepage/how-it-works/03.png"
                                         alt="Godzilla paw"
-                                        title="Godzilla paw"
                                         className="absolute inset-0 w-full h-full object-cover"
                                     />
                                 </picture>
                             </div>
                             <div className="relative z-[2]">
                                 <h3 className="h3 mb-[12px] tb:mb-[10px] sm:mb-[8px]">Transact</h3>
-                                <p className="max-w-[290px] opacity-0 transition-all duration-500 group-hover:opacity-100 xl:max-w-[216px] tb:max-w-[226px] xs:max-w-[162px] sm:opacity-100">
+                                <p className="text-t-white max-w-[290px] opacity-0 transition-opacity duration-500 group-hover:opacity-100 xl:max-w-[216px] tb:max-w-[226px] xs:max-w-[162px] sm:opacity-100">
                                     Start processing crypto payments and track your transactions in&nbsp;real-time
                                 </p>
                             </div>

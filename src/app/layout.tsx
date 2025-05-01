@@ -86,7 +86,7 @@ const RootLayout = ({ children }: LayoutProps) => {
                     `}
                 </Script>
             </head>
-            <body className={clsx(fontsVariables)}>
+            <body className={clsx("will-change-[background]", fontsVariables)}>
                 <AnimationsProvider>
                     <MainLayout>{children}</MainLayout>
                 </AnimationsProvider>

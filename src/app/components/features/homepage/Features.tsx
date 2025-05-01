@@ -32,7 +32,6 @@ export const FeaturesSection = () => {
                             )}
                             src="homepage/features/01.png"
                             alt="QR"
-                            title="QR"
                             aspectRatio={275 / 227}
                             sizes="(max-width: 767px) 100vw, (max-width: 991px) 50vw, 60vw"
                         />
@@ -60,7 +59,6 @@ export const FeaturesSection = () => {
                             )}
                             src="homepage/features/02.png"
                             alt="Paw"
-                            title="Paw"
                             aspectRatio={293 / 236}
                             sizes="(max-width: 767px) 100vw, (max-width: 991px) 50vw, 60vw"
                         />
@@ -89,7 +87,6 @@ export const FeaturesSection = () => {
                             )}
                             src="homepage/features/03.png"
                             alt="Map"
-                            title="Map"
                             aspectRatio={2 / 1}
                             sizes="(max-width: 767px) 100vw, (max-width: 991px) 50vw, 60vw"
                         />
@@ -117,7 +114,6 @@ export const FeaturesSection = () => {
                             )}
                             src="homepage/features/04.png"
                             alt="Low fees"
-                            title="Low fees"
                             aspectRatio={196 / 81}
                             sizes="(max-width: 767px) 100vw, (max-width: 991px) 50vw, 60vw"
                         />
@@ -125,7 +121,6 @@ export const FeaturesSection = () => {
                             className={clsx("hidden mt-[11px] w-[90%] mb-[-12%] self-center xs:mx-[-21px] xs:mb-[-48px] xs:w-[calc(100%+42px)]", "sm:block")}
                             src="homepage/features/04-mobile.png"
                             alt="Low fees"
-                            title="Low fees"
                             aspectRatio={160 / 73}
                             sizes="(max-width: 767px) 100vw, (max-width: 991px) 50vw, 60vw"
                         />

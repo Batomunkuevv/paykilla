@@ -86,7 +86,6 @@ export const ContactUsSection = () => {
                             )}
                             src="contact-us/paw.png"
                             alt="Paw"
-                            title="Paw"
                             aspectRatio={607 / 502}
                             sizes="30vw"
                         />

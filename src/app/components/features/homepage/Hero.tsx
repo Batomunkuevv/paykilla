@@ -21,13 +21,20 @@ export const HeroSection = () => {
             <div className="container relative z-[1]">
                 <div className="mb-[-16px] flex gap-x-[24px] justify-between 2xl:mb-[-11px]">
                     <div className="relative mt-[-30px] ml-[-15px] h1 2xl:mt-[-36px] 2xl:ml-[-13px] lg:mt-0 lg:ml-0 tb:mt-[-25px] tb:mr-[64px] tb:ml-[-9px] sm:mt-[-18px] sm:ml-[-5px] sm:z-[2] overflow-hidden">
-                        <Animated.Div initial={{ y: "100%" }} animate={startAnimations ? { y: 0 } : {}} transition={{ duration: 0.5 }}>
+                        <Animated.Div
+                            style={{ transform: "translateZ(0)" }}
+                            className="will-change-transform"
+                            initial={{ y: "100%" }}
+                            animate={startAnimations ? { y: 0 } : {}}
+                            transition={{ duration: 0.5, delay: 0.1 }}
+                        >
                             EM
                             <Animated.Span
+                                style={{ transform: "translateZ(0)" }}
                                 initial={{ opacity: 0 }}
                                 animate={startAnimations ? { opacity: 1 } : {}}
                                 transition={{ duration: 0.5, delay: 0.5 }}
-                                className="mt-[-28px] ml-[4px] mr-[7px] inline-block w-[75px] align-middle 2xl:mt-[-25px] 2xl:mr-[3px] tb:mt-[-21px] tb:ml-[6px] tb:mr-[10px] tb:w-[50px] sm:mt-[-12px] sm:ml-[11px] sm:w-[47px]"
+                                className="will-change-[opacity] mt-[-28px] ml-[4px] mr-[7px] inline-block w-[75px] align-middle 2xl:mt-[-25px] 2xl:mr-[3px] tb:mt-[-21px] tb:ml-[6px] tb:mr-[10px] tb:w-[50px] sm:mt-[-12px] sm:ml-[11px] sm:w-[47px]"
                             >
                                 <svg viewBox="0 0 75 61" fill="none" xmlns="http://www.w3.org/2000/svg">
                                     <line y1="30" x2="63" y2="30" stroke="#222A35" strokeWidth="12" />
@@ -76,45 +83,55 @@ export const HeroSection = () => {
                     </nav>
                 </div>
                 <div className="pb-[9px] mr-[-80px] mb-[-9px] h1 overflow-hidden 2xl:mr-[-15px] tb:pb-0 tb:mt-[9px] tb:ml-[-9px] tb:mr-0 tb:mb-[21px] tb:max-w-[88%] sm:mt-[10px] sm:ml-0 sm:mb-[8px] sm:overflow-visible">
-                    <Animated.Div initial={{ y: "100%" }} animate={startAnimations ? { y: 0 } : {}} transition={{ duration: 0.5, delay: 1 }}>
+                    <Animated.Div
+                        style={{ transform: "translateZ(0)" }}
+                        className="will-change-transform"
+                        initial={{ y: "100%" }}
+                        animate={startAnimations ? { y: 0 } : {}}
+                        transition={{ duration: 0.5, delay: 1 }}
+                    >
                         YOUR <span className="sm:ml-[-5px]">BUSINESS</span>
                     </Animated.Div>
                 </div>
                 <div className="pl-[4px] pr-[20px] pb-[110px] flex gap-x-[64px] xl:pl-0 xl:pr-[0] xl:pb-[96px] xl:mr-[-4px] xl:justify-between xl:gap-x-[48px] tb:mr-[-1px] tb:mb-[59px] tb:pb-0 sm:mb-[31px] sm:max-w-[220px] sm:flex-col">
                     <Animated.P
+                        style={{ transform: "translateZ(0)" }}
                         initial={{ opacity: 0 }}
                         animate={startAnimations ? { opacity: 1 } : {}}
                         transition={{ duration: 0.5, delay: 1.9 }}
-                        className="mt-[50px] mr-[75px] max-w-[376px] flex-1 xl:mt-[18px] xl:mr-0 xl:max-w-[282px] tb:mt-[3px] sm:mt-0 sm:mb-[6px]"
+                        className="will-change-[opacity] mt-[50px] mr-[75px] max-w-[376px] flex-1 xl:mt-[18px] xl:mr-0 xl:max-w-[282px] tb:mt-[3px] sm:mt-0 sm:mb-[6px]"
                     >
                         Seamlessly process crypto payments with near-instant settlements and robust security.{" "}
                         <strong>Unlock global markets and&nbsp;save on&nbsp;fees.</strong>
                     </Animated.P>
                     <Animated.Div
+                        style={{ transform: "translateZ(0)" }}
                         initial={{ opacity: 0 }}
                         animate={startAnimations ? { opacity: 1 } : {}}
                         transition={{ duration: 0.5, delay: 1.2 }}
                         className={clsx(
-                            "pl-[18px] mt-[-84px] mr-auto mb-[-110px] w-full max-w-[591px] flex items-start xl:mt-[-94px] xl:ml-[-118px] xl:mb-[-96px] xl:pl-[0] xl:mr-0 xl:max-w-[524px] lg:mt-[-56px] md:ml-[-90px] md:max-w-[480px]",
+                            "will-change-[opacity] pl-[18px] mt-[-84px] mr-auto mb-[-110px] w-full max-w-[591px] flex items-start xl:mt-[-94px] xl:ml-[-118px] xl:mb-[-96px] xl:pl-[0] xl:mr-0 xl:max-w-[524px] lg:mt-[-56px] md:ml-[-90px] md:max-w-[480px]",
                             "tb:absolute tb:top-[76px] tb:right-0 tb:translate-x-[6.5%] tb:max-w-[311px]",
                             "sm:top-[27%] sm:w-[40%] sm:max-w-[220px]",
                             "xs:w-full xs:max-w-[201px] xs:top-[10.9%] xs:right-0 xs:translate-x-[39%] xs:flex-col xs:gap-[8px]"
                         )}
                     >
                         <Animated.Div
+                            style={{ transform: "translateZ(0)" }}
                             initial={{ rotate: -8, x: "-8%" }}
                             animate={startAnimations ? { rotate: 0, x: 0 } : {}}
                             transition={{ duration: 0.5, delay: 1.7 }}
-                            className="mt-[17.3%] mr-[-41%] w-[72.767%]"
+                            className="will-change-transform mt-[17.3%] mr-[-41%] w-[72.767%]"
                         >
-                            <ResponsiveImage src="homepage/hero/left-card.svg" alt="Left card" title="Left card" aspectRatio={379 / 435} priority />
+                            <ResponsiveImage src="homepage/hero/left-card.svg" alt="Left card" aspectRatio={379 / 435} priority />
                         </Animated.Div>
                         <Animated.Div
+                            style={{ transform: "translateZ(0)" }}
                             initial={{ rotate: 15, x: "5%" }}
                             animate={startAnimations ? { rotate: 0, x: 0 } : {}}
                             transition={{ duration: 0.5, delay: 1.7 }}
                             className={clsx(
-                                "w-[69.10%] relative xs:w-[82.3%]",
+                                "will-change-transform w-[69.10%] relative xs:w-[82.3%]",
                                 "after:content-[''] after:absolute after:top-[50%] after:left-[50%] after:translate-x-[-49%] after:translate-y-[-50%] after:w-[68%] after:h-[83%] after:bg-glass after:backdrop-blur-[4px] after:rounded-[26px] after:rotate-[19deg]",
                                 "sm:after:translate-x-[-55%] sm:after:rounded-[14px]"
                             )}
@@ -123,17 +140,17 @@ export const HeroSection = () => {
                                 className="w-full relative z-[1] sm:ml-[-8px]"
                                 src="homepage/hero/right-card.svg"
                                 alt="Right card"
-                                title="Right card"
                                 aspectRatio={395 / 479}
                                 priority
                             />
                         </Animated.Div>
                     </Animated.Div>
                     <Animated.Div
+                        style={{ transform: "translateZ(0)" }}
                         initial={{ opacity: 0 }}
                         animate={startAnimations ? { opacity: 1 } : {}}
                         transition={{ duration: 0.5, delay: 1.7 }}
-                        className="mt-[48px] max-w-[217px] flex-1 xl:mt-[14px] xl:max-w-[180px] tb:mt-[1px] sm:max-w-[unset]"
+                        className="will-change-[opacity] mt-[48px] max-w-[217px] flex-1 xl:mt-[14px] xl:max-w-[180px] tb:mt-[1px] sm:max-w-[unset]"
                     >
                         <p className="mb-[8px] text-[36px] leading-[100%] font-bold xl:mb-[5px] xl:text-[30px] xl:leading-[120%] sm:hidden">With PayKilla</p>
                         <p className="tb:max-w-[165px] tb:text-right sm:max-w-[unset] sm:text-left [&_br]:sm:hidden">
@@ -147,14 +164,26 @@ export const HeroSection = () => {
                 </div>
                 <div className="mt-[-105px] ml-[-2px] flex items-center gap-[64px] justify-between xl:mt-[-88px] xl:ml-0 tb:mt-0 tb:flex-row-reverse sm:gap-[10px] sm:items-stretch sm:flex-col-reverse">
                     <div className="overflow-hidden">
-                        <Animated.Div initial={{ y: 100 }} animate={startAnimations ? { y: 0 } : {}} transition={{ duration: 0.5, delay: 1.7 }}>
+                        <Animated.Div
+                            style={{ transform: "translateZ(0)" }}
+                            className="will-change-transform"
+                            initial={{ y: 100 }}
+                            animate={startAnimations ? { y: 0 } : {}}
+                            transition={{ duration: 0.5, delay: 1.7 }}
+                        >
                             <Button action="secondary" href={process.env.NEXT_PUBLIC_BUTTONS_CALL_URL}>
                                 BOOK A CALL
                             </Button>
                         </Animated.Div>
                     </div>
                     <div className="overflow-hidden">
-                        <Animated.Div initial={{ y: 100 }} animate={startAnimations ? { y: 0 } : {}} transition={{ duration: 0.5, delay: 1.7 }}>
+                        <Animated.Div
+                            style={{ transform: "translateZ(0)" }}
+                            className="will-change-transform"
+                            initial={{ y: 100 }}
+                            animate={startAnimations ? { y: 0 } : {}}
+                            transition={{ duration: 0.5, delay: 1.7 }}
+                        >
                             <Button href={process.env.NEXT_PUBLIC_BUTTONS_GET_STARTED_URL}>GET STARTED</Button>
                         </Animated.Div>
                     </div>

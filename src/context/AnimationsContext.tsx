@@ -21,7 +21,7 @@ export const AnimationsProvider = ({ children }: { children: React.ReactNode }) 
 
             const timeout = setTimeout(() => {
                 setStartAnimations(true);
-            }, 3500);
+            }, 5000);
             return () => clearTimeout(timeout);
         }
     }, []);

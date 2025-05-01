@@ -63,7 +63,6 @@ export const ContactUsCtaSection = () => {
                     )}
                     src="homepage/contact-us-cta/illustration.png"
                     alt="Illustration"
-                    title="Illustration"
                     aspectRatio={734 / 673}
                     sizes="(max-width: 767px) 100vw, 40vw"
                 />

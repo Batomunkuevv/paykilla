@@ -23,7 +23,6 @@ export const WhyUsSection = () => {
                         )}
                         src="homepage/why-us/claws.png"
                         alt="Claws"
-                        title="Claws"
                         aspectRatio={224 / 213}
                         sizes="(max-width: 991px) 50vw, 25vw"
                     />

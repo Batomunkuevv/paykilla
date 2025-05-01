@@ -3,7 +3,7 @@ import { ClassNameProp } from "@t";
 export interface ResponsiveImageProps extends ClassNameProp {
     src: string;
     alt: string;
-    title: string;
+    title?: string;
     aspectRatio: number;
     basePath?: string;
     className?: string;

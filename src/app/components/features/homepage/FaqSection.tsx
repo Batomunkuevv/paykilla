@@ -178,7 +178,6 @@ export const FaqSection = () => {
                                     className="w-[55px] flex-none rounded-full sm:w-[39px]"
                                     src="homepage/faq/admin.png"
                                     alt="Admin avatar"
-                                    title="Admin avatar"
                                     aspectRatio={1 / 1}
                                     sizes="5vw"
                                 />

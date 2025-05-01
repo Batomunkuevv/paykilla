@@ -15,7 +15,7 @@ export const DemoSection = () => {
     const isInView = useInView(sectionRef, { amount: 0.6, once: true });
 
     useEffect(() => {
-        if (!sectionRef.current || window.matchMedia("(max-width: 1279px)").matches) return;
+        if (!sectionRef.current) return;
 
         const observer = new IntersectionObserver(
             ([entry]) => {
@@ -36,7 +36,7 @@ export const DemoSection = () => {
     }, []);
 
     return (
-        <section ref={sectionRef} id="demo" className="section text-t-white md:bg-orange md:py-[110px] sm:py-[90px]">
+        <section ref={sectionRef} id="demo" className="section text-t-white md:py-[110px] sm:py-[90px]">
             <div className="container">
                 <p className="subheading tb:mb-[40px] sm:mb-[31px]">[5] Demo</p>
 
@@ -87,26 +87,18 @@ export const DemoSection = () => {
 
                     <Animated.Div
                         className={clsx(
-                            "relative mt-[-7%] w-[60%] flex-none xl:mt-[-4%] xl:ml-[-0.7%] xl:w-[53.4%] md:ml-[-2.7%]",
+                            "will-change-transform translate-z-0 relative mt-[-7%] w-[60%] flex-none xl:mt-[-4%] xl:ml-[-0.7%] xl:w-[53.4%] md:ml-[-2.7%]",
                             "tb:w-[67.7%] tb:order-1 tb:mt-[-0.7%] tb:mb-[19px] tb:mx-auto tb:left-[-2.3%]",
                             "sm:hidden"
                         )}
                         style={{ y: imageTransformation }}
                     >
-                        <ResponsiveImage
-                            className="w-full"
-                            src="homepage/demo/image.png"
-                            alt="Demo image"
-                            title="Demo image"
-                            aspectRatio={1032 / 1098}
-                            sizes="80vw"
-                        />
+                        <ResponsiveImage className="w-full" src="homepage/demo/image.png" alt="Demo image" aspectRatio={1032 / 1098} sizes="80vw" />
                     </Animated.Div>
                     <ResponsiveImage
                         className={clsx("mb-[33px] hidden w-[calc(100vw-4px)] ml-[-18px]", "sm:block")}
                         src="homepage/demo/image-mobile.png"
                         alt="Demo image"
-                        title="Demo image"
                         aspectRatio={355 / 407}
                         sizes="100w"
                     />

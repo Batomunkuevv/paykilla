@@ -41,14 +41,71 @@ export const SolutionsSection = () => {
         }
     }, [isInView]);
 
+    useEffect(() => {
+        const section = sectionRef.current;
+        if (!section) return;
+
+        let touchStartX = 0;
+        let touchStartY = 0;
+        let touchEndX = 0;
+        let touchEndY = 0;
+
+        const minSwipeDistance = 50;
+
+        const handleTouchStart = (e: TouchEvent) => {
+            touchStartX = e.touches[0].clientX;
+            touchStartY = e.touches[0].clientY;
+        };
+
+        const handleTouchEnd = (e: TouchEvent) => {
+            touchEndX = e.changedTouches[0].clientX;
+            touchEndY = e.changedTouches[0].clientY;
+            handleSwipeGesture();
+        };
+
+        const handleSwipeGesture = () => {
+            const deltaX = touchStartX - touchEndX;
+            const deltaY = touchStartY - touchEndY;
+
+            if (Math.abs(deltaX) < Math.abs(deltaY)) return;
+
+            if (Math.abs(deltaX) > minSwipeDistance) {
+                const swiper = swiperRef.current;
+                const section = sectionRef.current;
+
+                if (!swiper || !section) return;
+
+                if (deltaX > 0) {
+                    const nextTab = section.querySelector(".swiper-slide-next button") as HTMLElement;
+
+                    nextTab.click();
+                } else {
+                    const prevTab = section.querySelector(".swiper-slide-prev button") as HTMLElement;
+
+                    prevTab.click();
+                }
+            }
+        };
+
+        if (typeof window !== "undefined" && window.innerWidth <= 768) {
+            section.addEventListener("touchstart", handleTouchStart as unknown as EventListener, { passive: true });
+            section.addEventListener("touchend", handleTouchEnd as unknown as EventListener, { passive: true });
+        }
+
+        return () => {
+            section.removeEventListener("touchstart", handleTouchStart as unknown as EventListener);
+            section.removeEventListener("touchend", handleTouchEnd as unknown as EventListener);
+        };
+    }, []);
+
     return (
-        <section ref={sectionRef} id="solutions" className="pt-[200px] section overflow-hidden xl:pt-[167px] md:pt-[110px] md:bg-sky sm:pt-[90px]">
+        <section ref={sectionRef} id="solutions" className="pt-[200px] section xl:pt-[167px] md:pt-[110px] sm:pt-[90px]">
             <div className="container">
                 <h2 className="subheading md:mb-[47px] sm:mb-[30px]">
                     <span className="text-t-orange">[3]</span> industry solutions
                 </h2>
                 <div className="pl-[24.61%] mt-[-52px] mr-[-12px] flex gap-[39px] 2xl:pl-[26.11%] 2xl:mt-[-48px] md:pl-0 md:mt-0 md:justify-between sm:block sm:m-0">
-                    <div className="mb-[200px] relative w-full max-w-[750px] flex-none h-[699px] 2xl:max-w-[673px] 2xl:h-[587px] xl:mb-[167px] lg:max-w-[543px] md:mb-[275px] md:h-[516px] md:max-w-[450px] sm:ml-[-20px] sm:mr-[-20px] sm:w-[auto]  sm:h-fit sm:mb-[30px] sm:max-w-[unset] xs:w-[calc(100%+244px)]">
+                    <div className="mb-[200px] relative w-full max-w-[750px] flex-none h-[699px] 2xl:max-w-[673px] 2xl:h-[587px] xl:mb-[167px] lg:max-w-[543px] md:mb-[275px] md:h-[516px] md:max-w-[450px] tb:mb-[165px] sm:ml-[-20px] sm:mr-[-20px] sm:w-[auto]  sm:h-fit sm:mb-[30px] sm:max-w-[unset] xs:w-[calc(100%+244px)]">
                         <div
                             className={clsx(
                                 "z-[10] absolute top-0 left-0 translate-y-[-50%] w-full h-[363px] transition-opacity duration-300 bg-gradient-to-b from-[var(--general-sky)] via-[var(--general-sky)] to-[rgba(225,238,247,0.58)] pointer-events-none",
@@ -140,7 +197,7 @@ export const SolutionsSection = () => {
                     </div>
                     <div
                         ref={contentRef}
-                        className="pointer-events-none ml-[-12%] relative z-[20] flex-1 self-end xl:ml-[-19.2%] xl:max-w-[50%] lg:ml-[-10%] md:max-w-[60%] tb:max-w-[unset] tb:ml-[-25.2%] sm:m-0"
+                        className="pointer-events-none ml-[-12%] relative z-[20] flex-1 self-end xl:ml-[-19.2%] xl:max-w-[50%] lg:ml-[-10%] md:max-w-[60%] tb:max-w-[unset] tb:ml-[-25.2%] sm:m-0 sm:pointer-events-auto"
                     >
                         <AnimatePresence mode="wait">
                             {solutions.map((solution, index) => {
@@ -163,6 +220,7 @@ export const SolutionsSection = () => {
                                             transition={{ duration: 0.5, ease: "easeInOut" }}
                                             className={clsx(
                                                 "sm:p-0",
+                                                { "pl-[8%] xl:pl-0 md:pl-[10%]": isMore },
                                                 { "pl-[8%] xl:pl-[14.3%] md:pl-[10%]": isSubscription },
                                                 { "md:pl-[10%]": isEcommerce },
                                                 { "md:pl-[10%]": isFinancial }
@@ -179,10 +237,10 @@ export const SolutionsSection = () => {
                                                         "mb-[9px] left-[3px] max-w-[265px] xl:mb-[39px] xl:left-0 md:mb-[20px] md:left-[3px] sm:left-0":
                                                             isGaming,
                                                     },
-                                                    { "mb-[48px] xs:mb-[76px]": isMore },
+                                                    { "mb-[48px] sm:mb-[20px]": isMore },
                                                     { "mb-[24px]": isFinancial },
                                                     { "mb-[-48px] xl:mb-[-26px]": isEcommerce },
-                                                    { "mb-[37px] xl:mb-[36px] xs:mb-[58px]": isSubscription }
+                                                    { "mb-[37px] xl:mb-[36px] sm:mb-[20px]": isSubscription }
                                                 )}
                                                 dangerouslySetInnerHTML={{ __html: solution.text }}
                                             />
@@ -190,13 +248,16 @@ export const SolutionsSection = () => {
                                                 className={clsx(
                                                     "sm:max-w-[80%] sm:mx-auto sm:translate-x-0 xs:max-w-[unset]",
                                                     {
-                                                        "mb-[-9%] mr-[-8%] xl:mb-[-11%] xl:ml-[-14%] xl:translate-x-[-0.8%] md:m-0 md:mb-[110px] md:translate-x-[23.1%] sm:mt-[-9.7%] sm:mr-[-32px] sm:mb-[90px] sm:ml-[-6px] sm:translate-x-[23.1%]":
+                                                        "mb-[-9%] mr-[-8%] xl:mb-[-11%] xl:ml-[-14%] xl:translate-x-[-0.8%] md:m-0 md:translate-x-[23.1%] sm:mt-[-9.7%] sm:mr-[-32px] sm:mb-[90px] sm:ml-[-6px] sm:translate-x-[23.1%]":
                                                             isGaming,
                                                     },
                                                     {
-                                                        "mb-[-10.3%] ml-[24.4%] translate-x-[-14.7%] sm:max-w-[70%]": isFinancial,
+                                                        "mb-[-10.3%] ml-[24.4%] translate-x-[-14.7%] md:mb-[-5%] sm:max-w-[60%] xs:max-w-[80%]": isFinancial,
                                                     },
-                                                    { "mb-[-25%] xl:mb-[-21%] xl:translate-x-[4.6%] sm:mb-[-18%] sm:translate-x-[20%]": isMore },
+                                                    {
+                                                        "mb-[-15%] xl:mb-[-21%] xl:translate-x-[4.6%] md:mb-[-5%] tb:translate-x-[20%] sm:translate-x-[10%]":
+                                                            isMore,
+                                                    },
                                                     {
                                                         "mb-[-5%] 2xl:mb-[4%] 2xl:translate-x-[-10px]": isEcommerce,
                                                     },

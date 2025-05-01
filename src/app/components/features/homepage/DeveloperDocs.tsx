@@ -19,7 +19,7 @@ export const DeveloperDocsSection = () => {
                 <Animated.Div
                     style={{ y: bodyTransformation }}
                     className={clsx(
-                        "pt-[70px] pr-[66px] pl-[56px] pb-[78px] bg-sky flex items-center justify-between gap-[48px]",
+                        "will-change-transform translate-z-0 pt-[70px] pr-[66px] pl-[56px] pb-[78px] bg-sky flex items-center justify-between gap-[48px]",
                         "xl:pt-[30px] xl:pb-[60px] xl:pr-[121px] xl:pl-[61px] xl:items-end",
                         "lg:px-[60px]",
                         "tb:pt-[30px] tb:pr-[20px] tb:pb-[49px] tb:pl-[51px] tb:gap-[14px] tb:items-stretch",
