@@ -110,7 +110,7 @@ export const HeroSection = () => {
                         animate={startAnimations ? { opacity: 1 } : {}}
                         transition={{ duration: 0.5, delay: 1.2 }}
                         className={clsx(
-                            "will-change-[opacity] pl-[18px] mt-[-84px] mr-auto mb-[-110px] w-full max-w-[591px] flex items-start xl:mt-[-94px] xl:ml-[-118px] xl:mb-[-96px] xl:pl-[0] xl:mr-0 xl:max-w-[524px] lg:mt-[-56px] md:ml-[-90px] md:max-w-[480px]",
+                            "pl-[18px] mt-[-84px] mr-auto mb-[-110px] w-full max-w-[591px] flex items-start xl:mt-[-94px] xl:ml-[-118px] xl:mb-[-96px] xl:pl-[0] xl:mr-0 xl:max-w-[524px] lg:mt-[-56px] md:ml-[-90px] md:max-w-[480px]",
                             "tb:absolute tb:top-[76px] tb:right-0 tb:translate-x-[6.5%] tb:max-w-[311px]",
                             "sm:top-[27%] sm:w-[40%] sm:max-w-[220px]",
                             "xs:w-full xs:max-w-[201px] xs:top-[10.9%] xs:right-0 xs:translate-x-[39%] xs:flex-col xs:gap-[8px]"
