@@ -96,7 +96,10 @@ export const ContactUsSection = () => {
                                 label="Your name"
                                 placeholder="Mary White"
                                 error={errors.name}
-                                {...register("name", { required: "Name is required" })}
+                                {...register("name", {
+                                    required: "Name is required",
+                                    validate: (value) => value.trim().length >= 2 || "Min 2 characters",
+                                })}
                             />
                             <InputField
                                 label="Your email"
@@ -116,7 +119,10 @@ export const ContactUsSection = () => {
                                 label="Your message"
                                 placeholder="Text your message"
                                 error={errors.message}
-                                {...register("message", { required: "Message is required" })}
+                                {...register("message", {
+                                    required: "Message is required",
+                                    validate: (value) => value.trim().length >= 2 || "Min 2 characters",
+                                })}
                             />
                             <CheckboxField
                                 className="mt-[-3px]"

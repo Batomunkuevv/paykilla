@@ -33,7 +33,7 @@ export const HeroSection = () => {
                                 style={{ transform: "translateZ(0)" }}
                                 initial={{ opacity: 0 }}
                                 animate={startAnimations ? { opacity: 1 } : {}}
-                                transition={{ duration: 0.5, delay: 0.5 }}
+                                transition={{ duration: 0.5, delay: 0.7 }}
                                 className="will-change-[opacity] mt-[-28px] ml-[4px] mr-[7px] inline-block w-[75px] align-middle 2xl:mt-[-25px] 2xl:mr-[3px] tb:mt-[-21px] tb:ml-[6px] tb:mr-[10px] tb:w-[50px] sm:mt-[-12px] sm:ml-[11px] sm:w-[47px]"
                             >
                                 <svg viewBox="0 0 75 61" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -88,7 +88,7 @@ export const HeroSection = () => {
                         className="will-change-transform"
                         initial={{ y: "100%" }}
                         animate={startAnimations ? { y: 0 } : {}}
-                        transition={{ duration: 0.5, delay: 1 }}
+                        transition={{ duration: 0.5, delay: 1.2 }}
                     >
                         YOUR <span className="sm:ml-[-5px]">BUSINESS</span>
                     </Animated.Div>

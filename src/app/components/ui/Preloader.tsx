@@ -7,6 +7,7 @@ import { Logo } from "./Logo";
 
 export const Preloader = () => {
     const [progress, setProgress] = useState(0);
+    const [isHidden, setIsHidden] = useState(false);
     const [isVisible, setIsVisible] = useState(true);
     const [lineHeight, setLineHeight] = useState(165);
     const numberRef = useRef<HTMLDivElement>(null);
@@ -26,6 +27,10 @@ export const Preloader = () => {
                     setIsVisible(false);
                     document.body.style.overflow = "";
                 }, 500);
+
+                setTimeout(() => {
+                    setIsHidden(true);
+                }, 1500);
             },
         });
 
@@ -36,6 +41,7 @@ export const Preloader = () => {
         <div
             className={clsx("py-[16px] fixed inset-0 bg-[#F6F8FF] flex items-end z-[1000] transition-transform duration-1000 will-change-transform", {
                 "translate-y-[-100%]": !isVisible,
+                "opacity-0": isHidden,
             })}
         >
             <div className="container">

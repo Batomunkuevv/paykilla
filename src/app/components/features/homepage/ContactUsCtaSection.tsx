@@ -25,13 +25,20 @@ export const ContactUsCtaSection = () => {
                     )}
                 >
                     <span className="pb-[16px] mb-[-15px] block overflow-hidden sm:inline">
-                        <Animated.Span className="block sm:inline" initial={{ y: "100%" }} animate={isInView ? { y: 0 } : false} transition={{ duration: 0.5 }}>
+                        <Animated.Span
+                            style={{ transform: "translateZ(0)" }}
+                            className="will-change-transform block sm:inline"
+                            initial={{ y: "100%" }}
+                            animate={isInView ? { y: 0 } : false}
+                            transition={{ duration: 0.5 }}
+                        >
                             If&nbsp;you have&nbsp;any
                             <span className="ml-[9.2%] block w-fit 2xl:ml-[4%] xl:m-0">questions or&nbsp;need</span>
                         </Animated.Span>
                     </span>
                     <span className="pb-[16px] mb-[-15px] ml-auto block w-fit tb:mt-[2px] sm:m-0 sm:inline overflow-hidden">
                         <Animated.Span
+                            style={{ transform: "translateZ(0)" }}
                             className="block sm:inline"
                             initial={{ y: "100%" }}
                             animate={isInView ? { y: 0 } : false}
@@ -42,12 +49,14 @@ export const ContactUsCtaSection = () => {
                     </span>
                     <span className="ml-auto relative top-[2px] left-[-73px] block w-fit overflow-hidden xl:top-0 xl:left-[-69px] tb:top-0 tb:left-[-62px] sm:m-0 sm:static sm:inline">
                         <Animated.Span
-                            className="block sm:inline"
+                            style={{ transform: "translateZ(0)" }}
+                            className="will-change-transform block sm:inline"
                             initial={{ y: "100%" }}
                             animate={isInView ? { y: 0 } : false}
                             transition={{ duration: 0.5, delay: 1 }}
                         >
-                            {" "}fill out the form
+                            {" "}
+                            fill out the form
                         </Animated.Span>
                     </span>
                 </h2>
