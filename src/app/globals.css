@@ -1,0 +1,179 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+    --general-white: #f6fbff;
+    --general-sky: #e1eef7;
+    --general-orange: #ff3516;
+    --general-gray: #dedede;
+    --general-black: #222a35;
+    --general-overlay: rgba(34, 42, 53, 0.36);
+    --general-disabled: #cac8c8;
+    --general-glass: rgba(233, 234, 255, 0.04);
+
+    --text-orange: #ff3516;
+    --text-black: #222a35;
+    --text-gray: #adb6c2;
+    --text-white: #f6fbff;
+
+    --hover-orange: #FF0000;
+    --active-orange: #FF5A40;
+    --hover-sky: #d5e5f1;
+}
+
+html,
+body {
+    @apply bg-white font-familijen-grotesk text-t-black scroll-smooth text-[24px] leading-[133%] transition-[background] duration-500 xl:text-[18px] sm:text-[16px] sm:leading-[140%];
+    scrollbar-gutter: stable;
+}
+
+html.no-animations *,
+html.no-animations *::before,
+html.no-animations *::after {
+    transition: none !important;
+    animation: none !important;
+}
+
+@supports not selector(::-webkit-scrollbar) {
+    body {
+        scrollbar-width: thin;
+        scrollbar-color: var(--general-orange) #fff;
+    }
+}
+
+body::-webkit-scrollbar {
+    width: 8px;
+    height: 8px;
+}
+
+body::-webkit-scrollbar-track {
+    background: 0 0;
+}
+
+body::-webkit-scrollbar-thumb {
+    background-color: var(--general-orange);
+    border-radius: 32px;
+    border: 1px solid #fff;
+}
+
+/* Typography */
+
+.h1,
+.h2 {
+    @apply text-orange font-medium;
+}
+
+.h1 {
+    @apply text-[243px] leading-[76%] uppercase 2xl:text-[196px] 2xl:leading-[86.73%] lg:text-[120px] lg:leading-[92.5%] sm:text-[72px] sm:leading-[98%];
+}
+
+.h2 {
+    @apply text-[134px] leading-[89.55%] xl:text-[103px] xl:leading-[94.17%] md:text-[80px] md:leading-[97.5%] sm:text-[64px] sm:leading-[100%];
+}
+
+.h3 {
+    @apply text-[36px] leading-[100%] font-bold xl:text-[30px] xl:leading-[120%] sm:text-[20px] sm:leading-[125%];
+}
+
+.subheading {
+    @apply text-[20px] leading-[120%] uppercase font-semibold xl:text-[16px] xl:leading-[150%];
+}
+
+.text-menu {
+    @apply text-[24px] leading-[100%] font-semibold xl:text-[18px] xl:leading-[133.3%] sm:text-[16px] sm:leading-[150%];
+}
+
+.text-button {
+    @apply text-[36px] leading-[147.22%] font-medium uppercase xl:text-[30px] xl:leading-[176.6%] tb:text-[24px] tb:leading-[220.8%] sm:text-[18px] sm:leading-[294.4%];
+}
+
+.text-label {
+    @apply text-[18px] leading-[133.333%];
+}
+
+.text-input {
+    @apply placeholder:text-t-gray text-[18px] leading-[133.333%] font-semibold;
+}
+
+.text-error {
+    @apply text-[18px] leading-[133.3%] text-orange;
+}
+
+strong {
+    @apply font-semibold;
+}
+
+/* Components */
+
+@layer components {
+    /* Site wrapper */
+
+    .site-wrapper {
+        @apply flex flex-col min-h-[100vh] overflow-clip;
+    }
+
+    /* Site page */
+
+    .site-page {
+        @apply pt-[40px] pb-[200px] flex-1 xl:pt-[23px] md:pb-[110px] md:pt-[34px] sm:pt-[23px] sm:pb-[89px];
+    }
+
+    /* Section */
+
+    .section {
+        @apply [&:not(:last-child)]:mb-[200px] md:[&:not(:last-child)]:mb-[110px] sm:[&:not(:last-child)]:mb-[89px];
+    }
+
+    /* Container */
+
+    .container {
+        @apply max-w-[1920px] mx-auto px-[100px] xl:px-[30px] lg:px-[20px];
+    }
+
+    /* Balls */
+
+    .blur-ball {
+        @apply absolute rounded-full blur-[136.6px] opacity-[0.64];
+    }
+
+    .blur-yellow {
+        @apply bg-[#FFF3C2];
+    }
+
+    .blur-pink {
+        @apply bg-[#EFB6C2];
+    }
+
+    .blur-blue {
+        @apply bg-[#A2D6FF];
+    }
+
+    .blur-purple {
+        @apply bg-[#D6D3FB];
+    }
+}
+
+/* Has scrollbar */
+
+@supports not selector(::-webkit-scrollbar) {
+    .has-scrollbar {
+        scrollbar-width: thin;
+        scrollbar-color: var(--general-orange) #fff;
+    }
+}
+
+.has-scrollbar::-webkit-scrollbar {
+    width: 8px;
+    height: 8px;
+}
+
+.has-scrollbar::-webkit-scrollbar-track {
+    background: 0 0;
+}
+
+.has-scrollbar::-webkit-scrollbar-thumb {
+    background-color: var(--general-orange);
+    border-radius: 32px;
+    border: 1px solid #fff;
+}
