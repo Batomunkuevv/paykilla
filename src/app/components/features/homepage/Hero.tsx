@@ -123,7 +123,7 @@ export const HeroSection = () => {
                             transition={{ duration: 0.5, delay: 1.7 }}
                             className="will-change-transform mt-[22.3%] mr-[-41%] w-[63.767%]"
                         >
-                            <ResponsiveImage src="homepage/hero/left-card.svg" alt="Left card" aspectRatio={379 / 435} priority />
+                            <ResponsiveImage src="homepage/hero/lc.svg" alt="Left card" aspectRatio={379 / 435} priority />
                         </Animated.Div>
                         <Animated.Div
                             style={{ transform: "translateZ(0)" }}
