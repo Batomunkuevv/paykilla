@@ -7,6 +7,7 @@ const nextConfig: NextConfig = {
     dangerouslyAllowSVG: true,
     minimumCacheTTL: 60,
     loader: "default",
+    qualities: [90]
   },
 };
 

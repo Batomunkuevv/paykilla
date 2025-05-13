@@ -139,7 +139,7 @@ export const HeroSection = () => {
                        
                             <ResponsiveImage
                                 className="w-full relative z-[1] sm:ml-[-8px]"
-                                src="homepage/hero/rc-1.png"
+                                src="homepage/hero/rc-2.png"
                                 alt="Right card"
                                 aspectRatio={395 / 479}
                                 priority
