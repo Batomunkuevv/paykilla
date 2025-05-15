@@ -177,3 +177,11 @@ strong {
     border-radius: 32px;
     border: 1px solid #fff;
 }
+
+@media (max-width: 767px) {
+.solutions-swiper {
+  overflow: visible !important;
+  padding-left: 20px !important;
+  padding-right: 20px !important;
+}
+}
