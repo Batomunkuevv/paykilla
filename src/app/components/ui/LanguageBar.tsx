@@ -1,7 +1,6 @@
 import clsx from "clsx";
 import Link from "next/link";
 import React, { useEffect, useState } from "react";
-import Router from "next/router";
 
 const linkClasses =
   "text-[24px] leading-[100%] font-bold uppercase pb-[4px] px-[4px] pt-[1px] border-[1px] border-orange text-t-black transition-all hover:text-orange  [&.active]:pointer-events-none [&.active]:bg-orange [&.active]:text-t-white xl:text-[18px] px-[3px] pb-[3px] pt-0 tb:h-[45px] tb:basis-1/2 tb:text-t-white tb:flex tb:items-center tb:justify-center sm:text-[16px]";
