@@ -30,7 +30,7 @@ export const FeaturesSection = () => {
                                 "sm:mt-[1.4%] sm:mr-[-22%] sm:mb-[-38.7%] sm:ml-auto sm:w-[93%]",
                                 "group-hover:scale-[1.05] transition-all duration-300"
                             )}
-                            src="homepage/features/01.png"
+                            src="homepage/features/qr.png"
                             alt="QR"
                             aspectRatio={275 / 227}
                             sizes="(max-width: 767px) 100vw, (max-width: 991px) 50vw, 60vw"

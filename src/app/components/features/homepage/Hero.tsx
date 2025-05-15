@@ -132,14 +132,14 @@ export const HeroSection = () => {
                             transition={{ duration: 0.5, delay: 1.7 }}
                             className={clsx(
                                 "will-change-transform w-[72.10%] relative xs:w-[86.3%] xs:ml-[-13px] xs:mt-[-6px]",
-                                "after:content-[''] after:absolute after:top-[50%] after:left-[50%] after:translate-x-[-49%] after:translate-y-[-50%] after:w-[58%] after:h-[69%] after:bg-glass after:backdrop-blur-[4px] after:rounded-[26px] after:rotate-[19deg]",
-                                "sm:after:translate-x-[-55%] sm:after:rounded-[14px]"
+                                "after:content-[''] after:absolute after:top-[50%] after:left-[50%] after:translate-x-[-50%] after:translate-y-[-50%] after:w-[58%] after:h-[69%] after:bg-glass after:backdrop-blur-[4px] after:rounded-[26px] after:rotate-[19deg]",
+                                "sm:after:translate-x-[-60%] sm:after:rounded-[14px] xs:after:translate-x-[-56%] xs:after:w-[59%]"
                             )}
                         >
                        
                             <ResponsiveImage
                                 className="w-full relative z-[1] sm:ml-[-8px]"
-                                src="homepage/hero/rc-2.png"
+                                src="homepage/hero/rc-3.svg"
                                 alt="Right card"
                                 aspectRatio={395 / 479}
                                 priority

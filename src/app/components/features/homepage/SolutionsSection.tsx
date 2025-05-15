@@ -124,14 +124,17 @@ export const SolutionsSection = () => {
                                 { "delay-500": isInView }
                             )}
                         ></div>
-                        <Swiper
+                        <div className="sm:px-[20px] sm:overflow-visible">
+                            <Swiper
+                        
                             speed={750}
                             slidesPerView="auto"
                             spaceBetween={16}
                             simulateTouch={false}
                             loop
-                            centeredSlides
-                            className="w-full h-full"
+                             centeredSlides={false}
+                                centeredSlidesBounds={false}
+                            className="w-full h-full [&.swiper]:sm:overflow-visible"
                             onSwiper={(swiper) => (swiperRef.current = swiper)}
                             onSlideChange={(swiper) => setActiveIndex(swiper.realIndex)}
                             breakpoints={{
@@ -194,6 +197,7 @@ export const SolutionsSection = () => {
                                 );
                             })}
                         </Swiper>
+                        </div>
                     </div>
                     <div
                         ref={contentRef}
@@ -227,12 +231,14 @@ export const SolutionsSection = () => {
                                             )}
                                         >
                                             <h3
-                                                className="mb-[20px] h2 hidden sm:block xs:text-[48px]"
+                                                className={clsx("mb-[20px] h2 hidden sm:block  sm:mr-[-5px] sm:text-[60px] sm:leading-[64px]", {
+                                                    "sm:text-[64px]":isGaming
+                                                })}
                                                 dangerouslySetInnerHTML={{ __html: solution.label }}
                                             ></h3>
                                             <p
                                                 className={clsx(
-                                                    "relative z-[1] mx-auto max-w-[300px] xl:mr-[113px] xl:max-w-[230px] md:mr-[30px] sm:mr-0 sm:ml-0 sm:max-w-[183px] sm:mb-[15px]",
+                                                    "relative z-[1] mx-auto max-w-[300px] xl:mr-[113px] xl:max-w-[230px] md:mr-[30px] sm:mr-0 sm:ml-0 sm:max-w-[208px] sm:mb-[15px]",
                                                     {
                                                         "mb-[9px] left-[3px] max-w-[265px] xl:mb-[39px] xl:left-0 md:mb-[20px] md:left-[3px] sm:left-0":
                                                             isGaming,
@@ -246,22 +252,22 @@ export const SolutionsSection = () => {
                                             />
                                             <ResponsiveImage
                                                 className={clsx(
-                                                    "sm:max-w-[80%] sm:mx-auto sm:translate-x-0 xs:max-w-[unset]",
+                                                    "sm:max-w-[80%] sm:mx-auto sm:translate-x-0 xs:max-w-[unset] animated-image",
                                                     {
                                                         "mb-[-9%] mr-[-8%] xl:mb-[-11%] xl:ml-[-14%] xl:translate-x-[-0.8%] md:m-0 md:translate-x-[23.1%] sm:mt-[-9.7%] sm:mr-[-32px] sm:mb-[90px] sm:ml-[-6px] sm:translate-x-[23.1%]":
                                                             isGaming,
                                                     },
                                                     {
-                                                        "mb-[-10.3%] ml-[24.4%] translate-x-[-14.7%] md:mb-[-5%] sm:max-w-[60%] xs:max-w-[80%]": isFinancial,
+                                                        "mb-[-10.3%] ml-[24.4%] translate-x-[-14.7%] md:mb-[-5%] sm:max-w-none xs:max-w-[80%] sm:translate-x-[48px] sm:translate-y-[2px] sm:w-[230px] sm:h-[300px] ": isFinancial,
                                                     },
                                                     {
-                                                        "mb-[-15%] xl:mb-[-21%] xl:translate-x-[4.6%] md:mb-[-5%] tb:translate-x-[20%] sm:translate-x-[10%]":
+                                                        "mb-[-15%] xl:mb-[-21%] xl:translate-x-[4.6%] md:mb-[-5%] tb:translate-x-[20%] sm:translate-x-[27%] sm:translate-y-[10px] sm:w-[315px] sm:h-[345px]":
                                                             isMore,
                                                     },
                                                     {
-                                                        "mb-[-5%] 2xl:mb-[4%] 2xl:translate-x-[-10px]": isEcommerce,
+                                                        "mb-[-5%] 2xl:mb-[4%] 2xl:translate-x-[-10px] sm:translate-x-[54px] sm:translate-y-[-31px]": isEcommerce,
                                                     },
-                                                    { "mb-[-3px] translate-x-[-1.9%]": isSubscription }
+                                                    { "mb-[-3px] translate-x-[-1.9%] sm:w-[283px] sm:h-[283px] sm:translate-x-[58px]": isSubscription }
                                                 )}
                                                 src={solution.image}
                                                 alt={solution.imageAlt}

@@ -8,6 +8,7 @@ import { headerMenu } from "@/data";
 import { ClassNameProp } from "@t";
 
 import { Logo, Menu, Button, CloseButton } from "@components";
+import LanguageBar from "./LanguageBar";
 
 export const Burger = ({ className }: ClassNameProp) => {
     const [isOpenMenu, setIsOpenMenu] = useState(false);
@@ -60,7 +61,8 @@ export const Burger = ({ className }: ClassNameProp) => {
                         <Logo type="white" className="w-full max-w-[175px] sm:max-w-[154px]" />
                         <CloseButton onClick={closeMenu} />
                     </div>
-                    <Menu items={headerMenu} className="mb-[64px] text-t-white uppercase" />
+                    <Menu items={headerMenu} className="mb-[30px] text-t-white uppercase" />
+                    <LanguageBar></LanguageBar>
                     <Button href={process.env.NEXT_PUBLIC_BUTTONS_CALL_URL} className="mt-auto w-full">
                         BOOK A CALL
                     </Button>
