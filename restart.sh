@@ -1,0 +1,1 @@
+git pull --rebase && npm run build && pm2 delete 0 &&  pm2 start npm  --name paykilla -- start
