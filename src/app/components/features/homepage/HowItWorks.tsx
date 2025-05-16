@@ -118,7 +118,7 @@ export const HowItWorksSection = () => {
                                 "sm:py-[20px] sm:px-[17px] sm:min-h-[424px]"
                             )}
                         >
-                            <div className="absolute inset-[-3px] z-0 opacity-100 transition-all duration-500 group-hover:opacity-100 sm:opacity-100">
+                            <div className="absolute inset-[-3px] z-0 opacity-0 transition-all duration-500 group-hover:opacity-100 sm:opacity-100">
                                 <picture>
                                     <source srcSet="/images/homepage/how-it-works/hiw-2-360.png" media="(max-width: 767px)" />
                                     <source srcSet="/images/homepage/how-it-works/hiw-2-764.png" media="(max-width: 991px)" />
