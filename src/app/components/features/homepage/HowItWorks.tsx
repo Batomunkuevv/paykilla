@@ -87,7 +87,7 @@ export const HowItWorksSection = () => {
                                     Create your PayKilla account to&nbsp;access your personalized dashboard
                                 </p>
                             </div>
-                            <div className="absolute inset-0 z-[1] pointer-events-none select-none sm:hidden">
+                            <div className="absolute inset-[-3px] z-[1] pointer-events-none select-none sm:hidden">
                                 <div
                                     className={clsx(
                                         "flex w-full h-full text-transparent text-[485px] font-medium leading-none",
@@ -118,7 +118,7 @@ export const HowItWorksSection = () => {
                                 "sm:py-[20px] sm:px-[17px] sm:min-h-[424px]"
                             )}
                         >
-                            <div className="absolute inset-[-3px] xl:inset-[0px] z-0 opacity-0 transition-all duration-500 group-hover:opacity-100 sm:opacity-100">
+                            <div className="absolute inset-[-3px] z-0 opacity-100 transition-all duration-500 group-hover:opacity-100 sm:opacity-100">
                                 <picture>
                                     <source srcSet="/images/homepage/how-it-works/hiw-2-360.png" media="(max-width: 767px)" />
                                     <source srcSet="/images/homepage/how-it-works/hiw-2-764.png" media="(max-width: 991px)" />
@@ -126,7 +126,7 @@ export const HowItWorksSection = () => {
                                     <img
                                         src="/images/homepage/how-it-works/hiw-2.png"
                                         alt="Godzilla with case"
-                                        className="absolute inset-0 w-full h-full object-cover translate-x-[-1px] translate-y-[-2px] xl:translate-x-[0px] xl:translate-y-[0px]"
+                                        className="absolute w-full h-full object-cover  xl:translate-x-[0px] xl:translate-y-[0px]"
                                     />
                                 </picture>
                             </div>
@@ -136,7 +136,7 @@ export const HowItWorksSection = () => {
                                     Seamlessly connect our API to&nbsp;your system with expert&nbsp;guidance
                                 </p>
                             </div>
-                            <div className="absolute inset-0 z-[1] pointer-events-none select-none sm:hidden">
+                            <div className="absolute inset-[-3px] z-[1] pointer-events-none select-none sm:hidden">
                                 <div
                                     className={clsx(
                                         "flex w-full h-full text-transparent text-[485px] font-medium leading-none",
@@ -186,7 +186,7 @@ export const HowItWorksSection = () => {
                                     Start processing crypto payments and track your transactions in&nbsp;real-time
                                 </p>
                             </div>
-                            <div className="absolute inset-0 z-[1] pointer-events-none select-none sm:hidden">
+                            <div className="absolute inset-[-3px] z-[1] pointer-events-none select-none sm:hidden">
                                 <div
                                     className={clsx(
                                         "flex w-full h-full text-transparent text-[485px] font-medium leading-none",

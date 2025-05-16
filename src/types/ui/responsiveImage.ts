@@ -11,4 +11,6 @@ export interface ResponsiveImageProps extends ClassNameProp {
     imageClassName?: string;
     sizes?: string;
     priority?: boolean;
+    width?: number;
+    height?: number;
 }

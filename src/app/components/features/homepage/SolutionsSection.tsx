@@ -160,7 +160,6 @@ export const SolutionsSection = () => {
                 { "delay-500": isInView }
               )}
             ></div>
-            {/* <div className="sm:px-[20px] sm:overflow-visible"> */}
             <Swiper
               speed={750}
               slidesPerView="auto"
@@ -241,7 +240,6 @@ export const SolutionsSection = () => {
                 );
               })}
             </Swiper>
-            {/* </div> */}
           </div>
           <div
             ref={contentRef}
@@ -302,13 +300,13 @@ export const SolutionsSection = () => {
                       />
                       <ResponsiveImage
                         className={clsx(
-                          "sm:max-w-[80%] sm:mx-auto sm:translate-x-0 xs:max-w-[unset] animated-image",
+                          "sm:max-w-[80%] sm:ml-auto sm:translate-x-0 xs:max-w-[unset] animated-image",
                           {
                             "mb-[-9%] mr-[-8%] xl:mb-[-11%] xl:ml-[-14%] xl:translate-x-[-0.8%] md:m-0 md:translate-x-[23.1%] sm:mt-[-9.7%] sm:mr-[-32px] sm:mb-[90px] sm:ml-[-6px] sm:translate-x-[23.1%]":
                               isGaming,
                           },
                           {
-                            "mb-[-10.3%] ml-[24.4%] translate-x-[-14.7%] md:mb-[-5%] sm:max-w-none xs:max-w-[80%] sm:translate-x-[48px] sm:translate-y-[2px] sm:w-[230px] sm:h-[300px] ":
+                            "mb-[-10.3%] ml-[24.4%] translate-x-[-14.7%] md:mb-[-5%] sm:max-w-none xs:max-w-[80%] sm:translate-x-[3px] sm:translate-y-[2px] sm:w-[230px] sm:h-[300px] ":
                               isFinancial,
                           },
                           {
@@ -316,11 +314,11 @@ export const SolutionsSection = () => {
                               isMore,
                           },
                           {
-                            "mb-[-5%] 2xl:mb-[4%] 2xl:translate-x-[-10px] sm:translate-x-[54px] sm:translate-y-[-31px]":
+                            "mb-[-5%] 2xl:mb-[4%] 2xl:translate-x-[-10px] sm:translate-x-[77px] sm:translate-y-[-15px] sm:w-[304px] sm:h-[292px]":
                               isEcommerce,
                           },
                           {
-                            "mb-[-3px] translate-x-[-1.9%] sm:w-[283px] sm:h-[283px] sm:translate-x-[58px]":
+                            "mb-[-3px] translate-x-[-1.9%] sm:w-[283px] sm:h-[283px] sm:translate-x-[37px]":
                               isSubscription,
                           }
                         )}

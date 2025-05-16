@@ -2,12 +2,11 @@ import type { NextConfig } from "next";
 
 const nextConfig: NextConfig = {
   images: {
-    deviceSizes: [768, 1024],
+    deviceSizes: [640, 750, 828, 1080, 1200, 1920, 2048, 3840],
     formats: ["image/avif", "image/webp"],
     dangerouslyAllowSVG: true,
-    minimumCacheTTL: 60,
     loader: "default",
-    qualities: [90]
+    qualities: [100]
   },
 };
 

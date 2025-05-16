@@ -93,14 +93,14 @@ export const DemoSection = () => {
                         )}
                         style={{ y: imageTransformation }}
                     >
-                        <ResponsiveImage className="w-full" src="homepage/demo/demo-1.png" alt="Demo image" aspectRatio={1032 / 1098} sizes="80vw" />
+                        <ResponsiveImage className="w-full" src="homepage/demo/mockups.png" alt="Demo image" aspectRatio={1032 / 1098} sizes="200vw" />
                     </Animated.Div>
                     <ResponsiveImage
                         className={clsx("mb-[33px] hidden w-[calc(100vw-4px)] ml-[-18px]", "sm:block")}
-                        src="homepage/demo/demo-mobile-1.png"
+                        src="homepage/demo/mock-mobile.png"
                         alt="Demo image"
                         aspectRatio={355 / 407}
-                        sizes="100w"
+                        sizes="200w"
                     />
                     <Animated.P
                         initial={{ opacity: 0 }}
