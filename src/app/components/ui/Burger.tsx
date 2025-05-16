@@ -62,7 +62,7 @@ export const Burger = ({ className }: ClassNameProp) => {
                         <CloseButton onClick={closeMenu} />
                     </div>
                     <Menu items={headerMenu} className="mb-[30px] text-t-white uppercase" />
-                    <LanguageBar></LanguageBar>
+                    {/* <LanguageBar></LanguageBar> */}
                     <Button href={process.env.NEXT_PUBLIC_BUTTONS_CALL_URL} className="mt-auto w-full">
                         BOOK A CALL
                     </Button>
