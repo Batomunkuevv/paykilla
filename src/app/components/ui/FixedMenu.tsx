@@ -4,7 +4,6 @@ import clsx from "clsx";
 import { useEffect, useState } from "react";
 import { headerMenu } from "@data";
 import { MenuItem } from "./MenuItem";
-import LanguageBar from "./LanguageBar";
 
 export const FixedMenu = () => {
   const [showMenu, setShowMenu] = useState(false);
