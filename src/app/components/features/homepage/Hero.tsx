@@ -131,21 +131,22 @@ export const HeroSection = () => {
                             animate={startAnimations ? { rotate: 0, x: 0 } : {}}
                             transition={{ duration: 0.5, delay: 1.7 }}
                             className={clsx(
-                                "will-change-transform w-[72.10%] relative xs:w-[86.3%] xs:ml-[-13px] xs:mt-[-6px]",
-                                "after:content-[''] after:absolute after:top-[50%] after:left-[50%] after:translate-x-[-50%] after:translate-y-[-50%] after:w-[58%]  after:h-[70%] after:bg-glass after:backdrop-blur-[4px] after:rounded-[26px] after:rotate-[19deg]  ",
-                                "sm:after:translate-x-[-59%] sm:after:translate-y-[-50%] sm:after:rounded-[10px]  xs:after:translate-x-[-56%] xs:after:w-[59%]"
+                                "will-change-transform w-[71.10%] mt-[10%] relative xs:w-[88.3%] xs:ml-[-13px] xs:mt-[7px]",
+                                "after:content-[''] after:absolute after:top-[50%] after:left-[50%] after:translate-x-[-50%] after:translate-y-[-50%] after:w-[58%]  after:h-[79%] after:bg-glass after:backdrop-blur-[4px] after:rounded-[32px] after:rotate-[19deg]  ",
+                                "sm:after:translate-x-[-59%] sm:after:translate-y-[-50%] sm:after:rounded-[20px]  xs:after:translate-x-[-56%] xs:after:w-[59%]"
                             )}
                         >
                        <div className="w-full relative z-[1] sm:ml-[-8px]">
                          <ResponsiveImage
                                 className=""
-                                src="homepage/hero/rc-3.svg"
+                                src="homepage/hero/right-card-1.png"
                                 alt="Right card"
-                                aspectRatio={395 / 479}
+                                aspectRatio={462 / 464}
                                 priority
+                                sizes="(max-width: 767px) 100vw, 50vw"
                             />
                          
-                              <ResponsiveImage
+                              {/* <ResponsiveImage
                                 className="absolute top-0 left-0 w-full h-full"
                                 src="homepage/hero/mobile-border-1.png"
                                 alt="Border"
@@ -153,7 +154,7 @@ export const HeroSection = () => {
                                 sizes="(max-width: 900px) 100vw, 40vw"
                                 aspectRatio={395 / 479}
                                 priority
-                            />
+                            /> */}
                        </div>
                            
                             
