@@ -130,8 +130,6 @@ export const SolutionsSection = () => {
     };
   }, []);
 
-  useEffect(() => {console.log(isSlidesCenter)}, [isSlidesCenter])
-
   return (
     <section
       ref={sectionRef}

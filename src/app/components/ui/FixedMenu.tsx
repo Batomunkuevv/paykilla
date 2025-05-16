@@ -43,7 +43,9 @@ export const FixedMenu = () => {
   return (
     <div
       className={clsx(
-        "fixed left-1/2 z-[100] -translate-x-1/2 border-[2px] border-gray w-full max-w-[1365px] flex  bg-white xl:max-w-[1044px] tb:hidden translate-y-[100%] bottom-0 transition-all duration-500 ",
+        "fixed left-1/2 z-[100] -translate-x-1/2 border-[2px] border-gray w-full flex justify-center bg-white  tb:hidden translate-y-[100%] bottom-0 transition-all duration-500 ",
+        "max-w-[1220px] xl:max-w-[966px]",
+        // "max-w-[1365px] xl:max-w-[1044px]",
         { "[&]:translate-y-[0%] bottom-[30px]": showMenu },
         { "opacity-0 pointer-events-none": isEndPage }
       )}
@@ -66,7 +68,7 @@ export const FixedMenu = () => {
           />
         ))}
       </ul>
-      <LanguageBar></LanguageBar>
+      {/* <LanguageBar></LanguageBar> */}
     </div>
   );
 };
