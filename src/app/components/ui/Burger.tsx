@@ -8,7 +8,7 @@ import { headerMenu } from "@/data";
 import { ClassNameProp } from "@t";
 
 import { Logo, Menu, Button, CloseButton } from "@components";
-import LanguageBar from "./LanguageBar";
+// import LanguageBar from "./LanguageBar";
 
 export const Burger = ({ className }: ClassNameProp) => {
     const [isOpenMenu, setIsOpenMenu] = useState(false);
