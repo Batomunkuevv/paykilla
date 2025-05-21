@@ -17,14 +17,14 @@
     --text-gray: #adb6c2;
     --text-white: #f6fbff;
 
-    --hover-orange: #FF0000;
-    --active-orange: #FF5A40;
+    --hover-orange: #ff0000;
+    --active-orange: #ff5a40;
     --hover-sky: #d5e5f1;
 }
 
 html,
 body {
-    @apply bg-white font-familijen-grotesk text-t-black scroll-smooth text-[24px] leading-[133%] transition-[background] duration-500 xl:text-[18px] sm:text-[16px] sm:leading-[140%];
+    @apply bg-white text-t-black scroll-smooth text-[24px] leading-[133%] transition-[background] duration-500 xl:text-[18px] sm:text-[16px] sm:leading-[140%];
     scrollbar-gutter: stable;
 }
 
@@ -40,6 +40,14 @@ html.no-animations *::after {
         scrollbar-width: thin;
         scrollbar-color: var(--general-orange) #fff;
     }
+}
+
+body.en-language {
+    @apply font-familijen-grotesk;
+}
+
+body.ru-language {
+    @apply font-museo-sans-cyrl;
 }
 
 body::-webkit-scrollbar {
@@ -179,9 +187,9 @@ strong {
 }
 
 @media (max-width: 767px) {
-.solutions-swiper {
-  overflow: visible !important;
-  padding-left: 20px !important;
-  padding-right: 20px !important;
-}
+    .solutions-swiper {
+        overflow: visible !important;
+        padding-left: 20px !important;
+        padding-right: 20px !important;
+    }
 }

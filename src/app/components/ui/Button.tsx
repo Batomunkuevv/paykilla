@@ -32,7 +32,7 @@ export const Button = (props: ButtonProps) => {
         { "bg-disabled pointer-events-none": isDisabled },
         "xl:py-[10px] xl:px-[32px] xl:min-w-[334px] xl:min-h-[80px]",
         "tb:min-w-[278px]",
-        "sm:py-[6px] sm:gap-[6px] sm:min-w-[unset] sm:w-full sm:min-h-[70px]",
+        "sm:py-[6px] sm:px-[16px] sm:gap-[6px] sm:min-w-[unset] sm:w-full sm:min-h-[70px]",
         { "bg-transparent [&]:border-orange text-t-black": action === "secondary" },
         { "text-t-white": action === "primary" },
         className

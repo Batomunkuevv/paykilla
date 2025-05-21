@@ -1,19 +1,15 @@
-import "./globals.css";
+import "@/app/globals.css";
 import clsx from "clsx";
 
-import type { Metadata } from "next";
+import { Metadata } from "next";
 import { LayoutProps } from "@t";
 
-import { AnimationsProvider } from "@context";
-
-import { fontsVariables } from "./fonts";
+import { fontsVariables } from "@/app/fonts";
 
 import Script from "next/script";
-import { MainLayout } from "@components";
 
 export const metadata: Metadata = {
     metadataBase: new URL("https://paykilla.com"),
-  
     robots: "follow, index, max-snippet:-1, max-video-preview:-1, max-image-preview:large",
     icons: {
         icon: [
@@ -52,7 +48,7 @@ export const metadata: Metadata = {
 
 const RootLayout = ({ children }: LayoutProps) => {
     return (
-        <html lang="ru">
+        <html lang="en">
             <head>
                 <Script src="https://www.googletagmanager.com/gtag/js?id=G-70QPNE8Q90" strategy="afterInteractive" />
                 <Script id="google-gtag" strategy="afterInteractive">
@@ -66,7 +62,7 @@ const RootLayout = ({ children }: LayoutProps) => {
                 <Script id="yandex-metrika" strategy="afterInteractive">
                     {`
                         (function(m,e,t,r,i,k,a){
-                            m[i]=m[i]||function(){(m[i].a=m[i].a||[]).push(arguments)};
+                            m[i]=m[i]=function(){(m[i].a=m[i].a||[]).push(arguments)};
                             m[i].l=1*new Date();
                             for (var j = 0; j < document.scripts.length; j++) {
                                 if (document.scripts[j].src === r) { return; }
@@ -84,11 +80,7 @@ const RootLayout = ({ children }: LayoutProps) => {
                     `}
                 </Script>
             </head>
-            <body className={clsx("will-change-[background]", fontsVariables)}>
-                <AnimationsProvider>
-                    <MainLayout>{children}</MainLayout>
-                </AnimationsProvider>
-            </body>
+            <body className={clsx("will-change-[background]", fontsVariables)}>{children}</body>
         </html>
     );
 };

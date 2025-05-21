@@ -51,10 +51,11 @@ export const StatusModal = ({ className, modal, setModal }: StatusModalProps) =>
                 )}
             >
                 <CloseButton className="absolute top-[17px] right-[17px]" onClick={closePopup} />
-                <h2 className="mb-[14px] text-[46px] leading-[113%] font-medium xl:text-[40px] xl:leading-[107.5%] sm:mb-[10px] xs:text-[18px] xs:leadiing-[150%]">
-                    {modal.title}
-                </h2>
-                {modal.text && <p className="xs:max-w-[145px]">{modal.text}</p>}
+                <h2
+                    className="mb-[14px] text-[46px] leading-[113%] font-medium xl:text-[40px] xl:leading-[107.5%] sm:mb-[10px] xs:text-[18px] xs:leadiing-[150%]"
+                    dangerouslySetInnerHTML={{ __html: modal.title }}
+                />
+                {modal.text && <p className="xs:max-w-[145px]" dangerouslySetInnerHTML={{ __html: modal.text }} />}
             </div>
         </div>
     );

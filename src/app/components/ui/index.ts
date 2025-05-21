@@ -15,3 +15,4 @@ export { CheckboxField } from "./CheckboxField";
 export { TextareaField } from "./TextareaField";
 export { StatusModal } from "./StatusModal";
 export { Animated } from "./Animated";
+export { LanguageSwitcher } from "./LanguageSwitcher";

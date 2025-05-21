@@ -1,11 +1,11 @@
 "use client";
 
 import { motion, MotionProps } from "framer-motion";
-import { useAnimations } from "@/hooks/useAnimations";
 import { ElementType, HTMLAttributes, ReactNode } from "react";
+import { useAnimations } from "@hooks";
 
 type AnimatedProps = {
-    children: ReactNode;
+    children?: ReactNode;
     className?: string;
 } & MotionProps &
     HTMLAttributes<HTMLElement>;

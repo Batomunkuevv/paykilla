@@ -47,4 +47,51 @@ const familijenGrotesk = localFont({
     variable: "--font-familijen-grotesk",
 });
 
-export const fontsVariables = familijenGrotesk.variable;
+const myseoSansCyrl = localFont({
+    src: [
+        {
+            path: "./fonts/MuseoSansCyrl/MuseoSansCyrl-500.woff2",
+            weight: "400",
+            style: "normal",
+        },
+        {
+            path: "./fonts/MuseoSansCyrl/MuseoSansCyrl-500.woff",
+            weight: "400",
+            style: "normal",
+        },
+        {
+            path: "./fonts/MuseoSansCyrl/MuseoSansCyrl-700.woff2",
+            weight: "500",
+            style: "normal",
+        },
+        {
+            path: "./fonts/MuseoSansCyrl/MuseoSansCyrl-700.woff",
+            weight: "500",
+            style: "normal",
+        },
+        {
+            path: "./fonts/MuseoSansCyrl/MuseoSansCyrl-700.woff2",
+            weight: "600",
+            style: "normal",
+        },
+        {
+            path: "./fonts/MuseoSansCyrl/MuseoSansCyrl-700.woff",
+            weight: "600",
+            style: "normal",
+        },
+        {
+            path: "./fonts/MuseoSansCyrl/MuseoSansCyrl-700.woff2",
+            weight: "700",
+            style: "normal",
+        },
+        {
+            path: "./fonts/MuseoSansCyrl/MuseoSansCyrl-700.woff",
+            weight: "700",
+            style: "normal",
+        },
+    ],
+    display: "swap",
+    variable: "--font-museo-sans-cyrl",
+});
+
+export const fontsVariables = [familijenGrotesk.variable, myseoSansCyrl.variable];

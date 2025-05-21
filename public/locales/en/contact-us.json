@@ -1,0 +1,39 @@
+{
+    "hero": {
+        "title": "contact us",
+        "text": " If&nbsp;you have any questions or&nbsp;need assistance, <span className='font-semibold text-t-orange'> please fill out the form below and our team will get back to&nbsp;you promptly. </span>",
+        "form": {
+            "name": {
+                "label": "Your name",
+                "placeholder": "Mary White",
+                "required": "Name is required",
+                "error": "Min 2 characters"
+            },
+            "email": {
+                "label": "Your email",
+                "placeholder": "example@mail.com",
+                "required": "Email is required",
+                "error": "Invalid email format"
+            },
+            "message": {
+                "label": "Your message",
+                "placeholder": "Text your message",
+                "required": "Message is required",
+                "error": "Min 2 characters"
+            },
+            "policy": {
+                "label": "I agree to the terms and conditions as set out by the user agreement",
+                "required": "Please confirm that you accept the agreement"
+            },
+            "buttonText": "SEND A MESSAGE",
+            "buttonTextSending": "Sending..."
+        }
+    },
+    "successModal": {
+        "title": "Thank you for the appeal!",
+        "text": "We'll get back to you as soon as possible!"
+    },
+    "errorModal": {
+        "title": "Please try again later or contact us another way."
+    }
+}

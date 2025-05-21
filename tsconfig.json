@@ -21,13 +21,15 @@
         "paths": {
             "@/*": ["./src/*"],
             "@components": ["./src/app/components"],
+            "@locales/*": ["./public/locales/*"],
             "@t": ["./src/types"],
             "@data": ["./src/data"],
             "@lib": ["./src/lib"],
-            "@context": ["./src/context"],
-            "@hooks": ["./src/hooks"]
+            "@providers": ["./src/providers"],
+            "@hooks": ["./src/hooks"],
+            "@utils": ["./src/utils"]
         }
     },
-    "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", ".next/types/**/*.ts", "tailwind.config.js"],
+    "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", ".next/types/**/*.ts", "tailwind.config.js", "next-i18next.config.js"],
     "exclude": ["node_modules"]
 }

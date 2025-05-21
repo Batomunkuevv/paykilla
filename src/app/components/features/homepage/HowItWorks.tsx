@@ -2,6 +2,7 @@
 
 import clsx from "clsx";
 import { useEffect, useState, useRef } from "react";
+import { useTranslation } from "react-i18next";
 
 import "swiper/css";
 import "swiper/css/pagination";
@@ -11,11 +12,18 @@ import { useInView } from "motion/react";
 
 import { ResponsiveImage, Button, Animated } from "@components";
 
+type HowItWorkType = {
+    title: string;
+    text: string;
+};
+
 export const HowItWorksSection = () => {
     const [isMobile, setIsMobile] = useState(false);
 
     const sectionRef = useRef(null);
 
+    const { t } = useTranslation();
+    const howItWorksList = t("home.howItWorks.list", { returnObjects: true }) as HowItWorkType[];
     const isInView = useInView(sectionRef, { once: true, amount: 1 });
 
     const handleWindowResize = () => {
@@ -37,7 +45,7 @@ export const HowItWorksSection = () => {
             <div className="container">
                 <div className="pr-[137px] mb-[48px] flex justify-between items-center gap-[32px] xl:pr-[90px] xl:mb-[52px] lg:pr-[5px] tb:mb-[40px] sm:mb-[30px]">
                     <h2 className="mt-[2px] subheading lg:mt-0">
-                        <span className="text-t-orange">[4]</span> How it works
+                        <span className="text-t-orange">[4]</span> {t("home.howItWorks.title")}
                     </h2>
                     <div className="flex gap-[10px] sm:hidden">
                         <ResponsiveImage
@@ -46,7 +54,7 @@ export const HowItWorksSection = () => {
                             alt="Cursor"
                             aspectRatio={1 / 1}
                         />
-                        {isMobile ? "Click" : "Hover"} on&nbsp;cards for more info
+                        {isMobile ? t("home.howItWorks.cursor.mobileAction") : t("home.howItWorks.cursor.action")} {t("home.howItWorks.cursor.text")}
                     </div>
                 </div>
                 <Swiper
@@ -82,10 +90,11 @@ export const HowItWorksSection = () => {
                                 </picture>
                             </div>
                             <div className="relative z-[2]">
-                                <h3 className="h3 mb-[12px] tb:mb-[10px] sm:mb-[8px]">Sign up</h3>
-                                <p className="text-t-white max-w-[290px] transition-opacity duration-500 opacity-0 group-hover:opacity-100 xl:max-w-[216px] tb:max-w-[166px] sm:opacity-100">
-                                    Create your PayKilla account to&nbsp;access your personalized dashboard
-                                </p>
+                                <h3 className="h3 mb-[12px] tb:mb-[10px] sm:mb-[8px]" dangerouslySetInnerHTML={{ __html: howItWorksList[0].title }}></h3>
+                                <p
+                                    className="text-t-white max-w-[290px] transition-opacity duration-500 opacity-0 group-hover:opacity-100 xl:max-w-[216px] tb:max-w-[166px] sm:opacity-100"
+                                    dangerouslySetInnerHTML={{ __html: howItWorksList[0].text }}
+                                ></p>
                             </div>
                             <div className="absolute inset-[-3px] z-[1] pointer-events-none select-none sm:hidden">
                                 <div
@@ -131,10 +140,11 @@ export const HowItWorksSection = () => {
                                 </picture>
                             </div>
                             <div className="relative z-[2]">
-                                <h3 className="h3 mb-[12px] tb:mb-[10px] sm:mb-[8px]">Integrate</h3>
-                                <p className="text-t-white max-w-[270px] opacity-0 transition-opacity duration-500 group-hover:opacity-100 xl:max-w-[216px] tb:max-w-[176px] sm:opacity-100">
-                                    Seamlessly connect our API to&nbsp;your system with expert&nbsp;guidance
-                                </p>
+                                <h3 className="h3 mb-[12px] tb:mb-[10px] sm:mb-[8px]" dangerouslySetInnerHTML={{ __html: howItWorksList[1].title }}></h3>
+                                <p
+                                    className="text-t-white max-w-[270px] opacity-0 transition-opacity duration-500 group-hover:opacity-100 xl:max-w-[216px] tb:max-w-[176px] sm:opacity-100"
+                                    dangerouslySetInnerHTML={{ __html: howItWorksList[1].text }}
+                                ></p>
                             </div>
                             <div className="absolute inset-[-3px] z-[1] pointer-events-none select-none sm:hidden">
                                 <div
@@ -181,10 +191,11 @@ export const HowItWorksSection = () => {
                                 </picture>
                             </div>
                             <div className="relative z-[2]">
-                                <h3 className="h3 mb-[12px] tb:mb-[10px] sm:mb-[8px]">Transact</h3>
-                                <p className="text-t-white max-w-[290px] opacity-0 transition-opacity duration-500 group-hover:opacity-100 xl:max-w-[216px] tb:max-w-[226px] xs:max-w-[162px] sm:opacity-100">
-                                    Start processing crypto payments and track your transactions in&nbsp;real-time
-                                </p>
+                                <h3 className="h3 mb-[12px] tb:mb-[10px] sm:mb-[8px]" dangerouslySetInnerHTML={{ __html: howItWorksList[2].title }}></h3>
+                                <p
+                                    className="text-t-white max-w-[290px] opacity-0 transition-opacity duration-500 group-hover:opacity-100 xl:max-w-[216px] tb:max-w-[226px] xs:max-w-[162px] sm:opacity-100"
+                                    dangerouslySetInnerHTML={{ __html: howItWorksList[2].text }}
+                                ></p>
                             </div>
                             <div className="absolute inset-[-3px] z-[1] pointer-events-none select-none sm:hidden">
                                 <div
@@ -221,7 +232,7 @@ export const HowItWorksSection = () => {
                 <div className="overflow-hidden">
                     <Animated.Div initial={{ y: "100%" }} animate={isInView ? { y: 0 } : false} transition={{ duration: 0.5 }}>
                         <Button href={process.env.NEXT_PUBLIC_BUTTONS_GET_STARTED_URL} className="mx-auto">
-                            GET STARTED
+                            {t("getStartedButtonText")}
                         </Button>
                     </Animated.Div>
                 </div>

@@ -1,12 +1,24 @@
-import { ResponsiveImage } from "@components";
+"use client";
+
 import clsx from "clsx";
+import { useTranslation } from "react-i18next";
+
+import { ResponsiveImage } from "@components";
+
+type Feature = {
+    title: string;
+    text: string;
+};
 
 export const FeaturesSection = () => {
+    const { t } = useTranslation();
+    const features = t("home.features.list", { returnObjects: true }) as Feature[];
+
     return (
         <section id="features" className="section">
             <div className="container">
                 <h2 className="mb-[50px] subheading tb:mb-[40px] sm:mb-[30px]">
-                    <span className="text-t-orange">[2]</span> killa features
+                    <span className="text-t-orange">[2]</span> {t("home.features.title")}
                 </h2>
                 <div className="grid grid-cols-3 gap-[10px] tb:flex tb:flex-col">
                     <div
@@ -17,10 +29,11 @@ export const FeaturesSection = () => {
                         )}
                     >
                         <div className="mb-auto">
-                            <h3 className="mb-[14px] text-t-orange h3 xl:mb-[10px] sm:mb-[8px]">Instant settlement</h3>
-                            <p className="relative z-[1] max-w-[394px] xl:max-w-[291px] xs:max-w-[208px]">
-                                Experience near-instant transactions to&nbsp;keep your cash flow uninterrupted
-                            </p>
+                            <h3 className="mb-[14px] text-t-orange h3 xl:mb-[10px] sm:mb-[8px]">{features[0].title}</h3>
+                            <p
+                                className="relative z-[1] max-w-[394px] xl:max-w-[291px] xs:max-w-[208px]"
+                                dangerouslySetInnerHTML={{ __html: features[0].text }}
+                            ></p>
                         </div>
                         <ResponsiveImage
                             className={clsx(
@@ -44,10 +57,11 @@ export const FeaturesSection = () => {
                         )}
                     >
                         <div className="mb-auto">
-                            <h3 className="mb-[11px] text-t-orange h3 sm:mb-[8px]">Advanced security</h3>
-                            <p className="relative z-[1] max-w-[471px] mb-auto xl:max-w-[351px] xs:max-w-[208px]">
-                                Protect your assets with multi-layer encryption and industry-leading security protocols
-                            </p>
+                            <h3 className="mb-[11px] text-t-orange h3 sm:mb-[8px]">{features[1].title}</h3>
+                            <p
+                                className="relative z-[1] max-w-[471px] mb-auto xl:max-w-[351px] xs:max-w-[208px]"
+                                dangerouslySetInnerHTML={{ __html: features[1].text }}
+                            ></p>
                         </div>
                         <ResponsiveImage
                             className={clsx(
@@ -71,10 +85,11 @@ export const FeaturesSection = () => {
                         )}
                     >
                         <div className="mb-auto">
-                            <h3 className="mb-[12px] text-t-orange h3 xl:mb-[11px] sm:mb-[7px]">Global reach</h3>
-                            <p className="relative z-[1] max-w-[470px] mb-auto xl:max-w-[350px] xs:max-w-[208px]">
-                                Accept payments in&nbsp;multiple cryptocurriences and access customers worldwide
-                            </p>
+                            <h3 className="mb-[12px] text-t-orange h3 xl:mb-[11px] sm:mb-[7px]">{features[2].title}</h3>
+                            <p
+                                className="relative z-[1] max-w-[470px] mb-auto xl:max-w-[350px] xs:max-w-[208px]"
+                                dangerouslySetInnerHTML={{ __html: features[2].text }}
+                            ></p>
                         </div>
                         <ResponsiveImage
                             className={clsx(
@@ -99,10 +114,11 @@ export const FeaturesSection = () => {
                         )}
                     >
                         <div className="mb-auto">
-                            <h3 className="mb-[11px] text-t-orange h3 sm:mb-[7px]">Ultra-low fees</h3>
-                            <p className="relative z-[1] max-w-[460px] mb-auto xl:max-w-[320px] xs:max-w-[208px]">
-                                Save on&nbsp;processing costs with competitive fee structures and&nbsp;no&nbsp;hidden charges
-                            </p>
+                            <h3 className="mb-[11px] text-t-orange h3 sm:mb-[7px]">{features[3].title}</h3>
+                            <p
+                                className="relative z-[1] max-w-[460px] mb-auto xl:max-w-[320px] xs:max-w-[208px]"
+                                dangerouslySetInnerHTML={{ __html: features[3].text }}
+                            ></p>
                         </div>
                         <ResponsiveImage
                             className={clsx(

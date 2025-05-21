@@ -1,0 +1,155 @@
+{
+    "bookACallButtonText": "Book a call",
+    "getStartedButtonText": "Get started",
+    "home": {
+        "hero": {
+            "fullTitle": "EMPOWER YOUR BUSINESS WITH PAYKILLA",
+            "titlePartBeforeArrow": "EM",
+            "titlePartAfterArrow": "POWER",
+            "endOfTitle": "YOUR <span className='sm:ml-[-5px]'>BUSINESS</span>",
+            "text": "Seamlessly process crypto payments with near-instant settlements and robust security. <strong>Unlock global markets and&nbsp;save on&nbsp;fees.</strong>",
+            "right": {
+                "title": "With PayKilla",
+                "word": "Killa [&rsquo;kɪlə]:",
+                "description": "cool,<br /> highly skilled"
+            }
+        },
+        "whyUs": {
+            "caption": "Why choose PayKilla",
+            "titleFirstPart": "Empower your <br /> business to&nbsp;thrive",
+            "titleSecondPart": "in&nbsp;the digital",
+            "titleThirdPart": "economy",
+            "text": "PayKilla leverages cutting-edge blockchain technology and a&nbsp;user-centric design to&nbsp;deliver a&nbsp;secure, fast and <strong className='text-orange'> cost&#8209;effective crypto payment solution.</strong>"
+        },
+        "features": {
+            "title": "killa features",
+            "list": [
+                {
+                    "title": "Instant settlement",
+                    "text": "Experience near-instant transactions to&nbsp;keep your cash flow uninterrupted"
+                },
+                {
+                    "title": "Advanced security",
+                    "text": "Protect your assets with multi-layer encryption and industry-leading security protocols"
+                },
+                {
+                    "title": "Global reach",
+                    "text": "Accept payments in&nbsp;multiple cryptocurriences and access customers worldwide"
+                },
+                {
+                    "title": "Ultra-low fees",
+                    "text": "Save on&nbsp;processing costs with competitive fee structures and no&nbsp;hidden charges"
+                }
+            ]
+        },
+        "solutions": {
+            "title": "Для кого?",
+            "list": [
+                {
+                    "name": "Gaming & Digital",
+                    "text": "Enable seamless in-game purchases and digital asset&nbsp;transaction"
+                },
+                {
+                    "name": "Financial Services",
+                    "text": "Integrate advanced crypto infrastructure to&nbsp;power innovative fintech solutions"
+                },
+                {
+                    "name": "And much more",
+                    "text": "We&nbsp;can perfectly integrate into&nbsp;your business&nbsp;&mdash; tailored to&nbsp;your unique needs"
+                },
+                {
+                    "name": "E&#8209;commerce &&nbsp;Retail",
+                    "text": "Boost sales by&nbsp;offering crypto payment options to&nbsp;a&nbsp;global customer base"
+                },
+                {
+                    "name": "Subscription Services",
+                    "text": "Automate reccuring payments with secure, reliable crypto&nbsp;processing"
+                }
+            ]
+        },
+        "howItWorks": {
+            "title": "HOW IT WORKS",
+            "cursor": {
+                "action": "Hover",
+                "mobileAction": "Click",
+                "text": "on cards for more info"
+            },
+            "list": [
+                {
+                    "title": "Sign up",
+                    "text": "Create your PayKilla account to&nbsp;access your personalized dashboard"
+                },
+                {
+                    "title": "Integrate",
+                    "text": "Seamlessly connect our API to&nbsp;your system with expert guidance"
+                },
+                {
+                    "title": "Transact",
+                    "text": "Start processing crypto payments and track your transactions in&nbsp;real-time"
+                }
+            ]
+        },
+        "demo": {
+            "caption": "Demo",
+            "title": {
+                "firstPart": "Simplify crypto",
+                "secondPart": "payments with",
+                "thirdPart": "our widget"
+            },
+            "text": "Installing the widget on your website is quick and simple. Don’t miss out on this opportunity to offer your customers a convenient payment method. <strong>Add our crypto payment widget to your website now!</strong>",
+            "bottomText": "Killa [ˈkɪlə]:<br /> cool, highly skilled"
+        },
+        "developerDocs": {
+            "title": {
+                "firstPart": "Developer ",
+                "secondPart": "Docs&nbsp;&amp; ",
+                "thirdPart": "Insights"
+            },
+            "text": "Access our comprehensive API documentation and developer resources <strong> to integrate crypto processing into your app quickly.</strong>",
+            "buttonText": "VIEW API DOCS"
+        },
+        "contactUsCta": {
+            "caption": "contact us",
+            "title": {
+                "firstPart": "If&nbsp;you have&nbsp;any",
+                "secondPart": "questions or&nbsp;need",
+                "thirdPart": "assistance, please",
+                "fourthPart": "fill out the form"
+            },
+            "buttonText": "CONTACT US"
+        },
+        "faq": {
+            "backButtonText": "BACK TO QUESTIONS",
+            "list": [
+                {
+                    "question": "What is&nbsp;a&nbsp;payment gateway for cryptocurrencies?",
+                    "answer": "A&nbsp;cryptocurrency payment gateway is&nbsp;a&nbsp;financial service that allows businesses to&nbsp;accept cryptocurrency payments from customers around the world. It&nbsp;handles the technical aspects of&nbsp;blockchain transactions, verifying and processing payments in&nbsp;digital currencies such as&nbsp;BTC and ETH. Gateways integrate with websites or&nbsp;e-commerce platforms, offering lower fees and faster processing than traditional payment methods."
+                },
+                {
+                    "question": "What are the benefits of&nbsp;using a&nbsp;cryptocurrency payment service?",
+                    "answer": "Cryptocurrency payment services (gateways) significantly reduce transaction fees (typically less than&nbsp;1% compared to&nbsp;2-5% for traditional processors), providing faster settlements in&nbsp;minutes rather than days. They eliminate chargeback fraud through irreversible blockchain transactions and provide global accessibility without the complexities of&nbsp;currency conversion. In&nbsp;addition, offering cryptocurrency payments positions your business as&nbsp;innovative and progressive one in&nbsp;an&nbsp;increasingly digital economy."
+                },
+                {
+                    "question": "How does<br> PayKilla work?",
+                    "answer": "When a&nbsp;customer selects a&nbsp;cryptocurrency at&nbsp;the checkout stage, PayKilla&nbsp;generates a&nbsp;unique payment address for the transaction. The customer sends the exact amount from his wallet and&nbsp;PayKilla verifies correctness of&nbsp;the transaction. Business can choose to&nbsp;receive payments in&nbsp;multiple cryptocurrencies or&nbsp;automatically convert to&nbsp;one preferred currency, with&nbsp;PayKilla dashboard providing real-time monitoring and reporting."
+                },
+                {
+                    "question": "Is&nbsp;it&nbsp;safe<br> to&nbsp;use&nbsp;PayKilla?",
+                    "answer": "Yes, PayKilla&nbsp;implements advanced security measures including advanced encryption, multi-signature authentication and real-time fraud detection systems. Unlike traditional payment systems that are vulnerable to&nbsp;data breaches, PayKilla&rsquo;s decentralised architecture minimises exposure to&nbsp;common security threats."
+                },
+                {
+                    "question": "How to&nbsp;start<br> using the service?",
+                    "answer": "Getting started with&nbsp;PayKilla requires you to&nbsp;create an&nbsp;account for your business. Once registered, customise your payment preferences and integrate using the API or&nbsp;use the out-of-the-box widget solution. This is&nbsp;enough to&nbsp;start accepting cryptocurrency payments without connection fees or&nbsp;technical hurdles."
+                },
+                {
+                    "question": "Does the service<br> charge a&nbsp;connection fee?",
+                    "answer": "No, PayKilla&nbsp;does not charge any connection fees, unlike many traditional payment processors and other cryptocurrency gateways. This zero fee policy makes accepting cryptocurrency affordable for businesses of&nbsp;any size with no&nbsp;upfront costs or&nbsp;hidden setup fees."
+                },
+                {
+                    "question": "How do&nbsp;businesses integrate cryptocurrency into their existing payment system?",
+                    "answer": "PayKilla&nbsp;integrates seamlessly along with your existing payment methods via special plugins or&nbsp;APIs. The integration adds cryptocurrency as&nbsp;a&nbsp;payment option without changing the existing payment process, while the dashboard consolidates reporting across all payment methods."
+                }
+            ]
+        }
+    }
+}

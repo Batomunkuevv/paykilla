@@ -19,9 +19,9 @@ export const CheckboxField = ({ label, name, error, className, ...props }: Check
                         <path d="M1 5L5 10.5L8 1" stroke="#FF3516" strokeWidth="1.5" />
                     </svg>
                 </span>
-                {label}
+                <span dangerouslySetInnerHTML={{ __html: label }} />
             </label>
-            {error && <p className="mt-[8px] text-error">{error.message}</p>}
+            {error?.message && <p className="mt-[8px] text-error" dangerouslySetInnerHTML={{ __html: error.message }} />}
         </div>
     );
 };

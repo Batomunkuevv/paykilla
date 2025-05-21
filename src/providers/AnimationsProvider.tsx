@@ -1,6 +1,6 @@
 "use client";
 
-import { createContext, useEffect, useState } from "react";
+import { createContext, useEffect, useState, ReactNode } from "react";
 import { AnimationsContextType } from "@t";
 
 export const AnimationsContext = createContext<AnimationsContextType>({
@@ -8,7 +8,7 @@ export const AnimationsContext = createContext<AnimationsContextType>({
     startAnimations: false,
 });
 
-export const AnimationsProvider = ({ children }: { children: React.ReactNode }) => {
+export const AnimationsProvider = ({ children }: { children: ReactNode }) => {
     const [canAnimate, setCanAnimate] = useState(false);
     const [startAnimations, setStartAnimations] = useState(false);
 
@@ -22,6 +22,7 @@ export const AnimationsProvider = ({ children }: { children: React.ReactNode }) 
             const timeout = setTimeout(() => {
                 setStartAnimations(true);
             }, 5500);
+
             return () => clearTimeout(timeout);
         }
     }, []);

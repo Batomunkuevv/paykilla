@@ -1,34 +1,48 @@
 "use client";
 
 import clsx from "clsx";
+import { useTranslation } from "react-i18next";
 import { useAnimations } from "@hooks";
+import { i18n } from "@lib";
 
 import { headerMenu } from "@/data";
 
 import Link from "next/link";
 import { Button, ResponsiveImage, BlurBall, Animated } from "@components";
+import { LocaleType } from "@/types";
 
 export const HeroSection = () => {
+    const { t } = useTranslation();
     const { startAnimations } = useAnimations();
 
-    const menuMiddle = Math.round(headerMenu.length / 2);
-    const firstMenuCol = headerMenu.slice(0, menuMiddle);
-    const secondMenuCol = headerMenu.slice(menuMiddle);
+    const isRussianLocale = i18n.language === "ru";
+    const headerMenuByLocale = headerMenu[i18n?.language as LocaleType];
+    const menuMiddle = Math.round(headerMenuByLocale.length / 2);
+    const firstMenuCol = headerMenuByLocale.slice(0, menuMiddle);
+    const secondMenuCol = headerMenuByLocale.slice(menuMiddle);
 
     return (
         <section className="section">
-            <h1 className="sr-only">Empower your business</h1>
+            <h1 className="sr-only">{t("home.hero.fullTitle")}</h1>
             <div className="container relative z-[1]">
-                <div className="mb-[-16px] flex gap-x-[24px] justify-between 2xl:mb-[-11px]">
-                    <div className="relative mt-[-30px] ml-[-15px] h1 2xl:mt-[-36px] 2xl:ml-[-13px] lg:mt-0 lg:ml-0 tb:mt-[-25px] tb:mr-[64px] tb:ml-[-9px] sm:mt-[-18px] sm:ml-[-5px] sm:z-[2] overflow-hidden">
+                <div className={clsx("mb-[-16px] flex gap-x-[24px] justify-between 2xl:mb-[-11px]", { "[&]:mb-[-40px] lg:[&]:mb-[-11px]": isRussianLocale })}>
+                    <div
+                        className={clsx(
+                            "relative mt-[-30px] ml-[-15px] h1 2xl:mt-[-36px] 2xl:ml-[-13px] lg:mt-0 lg:ml-0 tb:mt-[-25px] tb:mr-[64px] tb:ml-[-9px] sm:mt-[-18px] sm:ml-[-5px] sm:z-[2] sm:overflow-visible overflow-hidden",
+                            {
+                                "[&]:ml-0 [&]:text-[168px] [&]:leading-[100%] 2xl:[&]:mt-[-16px] 2xl:[&]:text-[138px] xl:[&]:text-[120px] lg:[&]:text-[112px] tb:[&]:max-w-[90%] tb:[&]:text-[120px] sm:[&]:text-[64px] xxs:[&]:text-[64px]":
+                                    isRussianLocale,
+                            }
+                        )}
+                    >
                         <Animated.Div
                             style={{ transform: "translateZ(0)" }}
                             className="will-change-transform"
-                            initial={{ y: "100%" }}
+                            initial={isRussianLocale ? { y: "126%" } : { y: "100%" }}
                             animate={startAnimations ? { y: 0 } : {}}
                             transition={{ duration: 0.5, delay: 0.1 }}
                         >
-                            EM
+                            {t("home.hero.titlePartBeforeArrow")}
                             <Animated.Span
                                 style={{ transform: "translateZ(0)" }}
                                 initial={{ opacity: 0 }}
@@ -48,16 +62,24 @@ export const HeroSection = () => {
                                     />
                                 </svg>
                             </Animated.Span>
-                            <span>POWER</span>
+                            <span>{t("home.hero.titlePartAfterArrow")}</span>
                         </Animated.Div>
                     </div>
-                    <nav className="relative flex-none max-w-[460px] grid grid-cols-[1fr_1.33fr] gap-x-[41px] xl:gap-x-[22px] xl:max-w-[336px] tb:hidden">
+                    <nav
+                        className={clsx(
+                            "relative flex-none max-w-[460px] grid grid-cols-[1fr_1.33fr] gap-x-[41px] xl:gap-x-[22px] xl:max-w-[336px] tb:hidden",
+                            { "[&]:max-w-[500px] [&]:grid-cols-[1.1fr_1fr] xl:[&]:max-w-[470px]": isRussianLocale }
+                        )}
+                    >
                         {firstMenuCol && (
                             <ul>
                                 {firstMenuCol.map((item, i) => (
                                     <li key={i} className="[&:not(:last-child)]:mb-[12px] text-menu uppercase 2xl:[&:not(:last-child)]:mb-[3px]">
                                         <Link
-                                            className="pb-[8px] block w-fit border-b-2 border-solid border-transparent hover:border-orange transition-all duration-300 2xl:pb-[5px]"
+                                            className={clsx(
+                                                "pb-[8px] block w-fit border-b-2 border-solid border-transparent hover:border-orange transition-all duration-300 2xl:pb-[5px]",
+                                                { "[&]:text-[20px] lg:[&]:text-[16px]": isRussianLocale }
+                                            )}
                                             href={item.href}
                                         >
                                             {item.label}
@@ -71,7 +93,10 @@ export const HeroSection = () => {
                                 {secondMenuCol.map((item, i) => (
                                     <li key={i} className="[&:not(:last-child)]:mb-[12px] text-menu uppercase 2xl:[&:not(:last-child)]:mb-[3px]">
                                         <Link
-                                            className="pb-[8px] block w-fit border-b-2 border-solid border-transparent hover:border-orange transition-all duration-300 2xl:pb-[5px]"
+                                            className={clsx(
+                                                "pb-[8px] block w-fit border-b-2 border-solid border-transparent hover:border-orange transition-all duration-300 2xl:pb-[5px]",
+                                                { "[&]:text-[20px] lg:[&]:text-[16px]": isRussianLocale }
+                                            )}
                                             href={item.href}
                                         >
                                             {item.label}
@@ -82,28 +107,38 @@ export const HeroSection = () => {
                         )}
                     </nav>
                 </div>
-                <div className="pb-[9px] mr-[-80px] mb-[-9px] h1 overflow-hidden 2xl:mr-[-15px] tb:pb-0 tb:mt-[9px] tb:ml-[-9px] tb:mr-0 tb:mb-[21px] tb:max-w-[88%] sm:mt-[10px] sm:ml-0 sm:mb-[8px] sm:overflow-visible">
+                <div
+                    className={clsx(
+                        "pb-[9px] mr-[-80px] mb-[-9px] h1 overflow-hidden 2xl:mr-[-15px] tb:pb-0 tb:mt-[9px] tb:ml-[-9px] tb:mr-0 tb:mb-[21px] tb:max-w-[88%] sm:mt-[10px] sm:ml-0 sm:mb-[8px] sm:overflow-visible",
+                        {
+                            "[&]:text-[168px] [&]:leading-[100%] 2xl:[&]:text-[138px] xl:[&]:text-[120px] lg:[&]:text-[112px] tb:[&]:max-w-[80%] tb:[&]:text-[120px] sm:[&]:text-[64px] xxs:[&]:text-[64px]":
+                                isRussianLocale,
+                        }
+                    )}
+                >
                     <Animated.Div
                         style={{ transform: "translateZ(0)" }}
                         className="will-change-transform"
                         initial={{ y: "100%" }}
                         animate={startAnimations ? { y: 0 } : {}}
                         transition={{ duration: 0.5, delay: 1.2 }}
-                    >
-                        YOUR <span className="sm:ml-[-5px]">BUSINESS</span>
-                    </Animated.Div>
+                        dangerouslySetInnerHTML={{ __html: t("home.hero.endOfTitle") }}
+                    ></Animated.Div>
                 </div>
-                <div className="pl-[4px] pr-[20px] pb-[110px] flex gap-x-[64px] xl:pl-0 xl:pr-[0] xl:pb-[96px] xl:mr-[-4px] xl:justify-between xl:gap-x-[48px] tb:mr-[-1px] tb:mb-[59px] tb:pb-0 sm:mb-[31px] sm:max-w-[220px] sm:flex-col">
+                <div
+                    className={clsx(
+                        "pl-[4px] pr-[20px] pb-[110px] flex gap-x-[64px] xl:pl-0 xl:pr-[0] xl:pb-[96px] xl:mr-[-4px] xl:justify-between xl:gap-x-[48px] tb:mr-[-1px] tb:mb-[59px] tb:pb-0 sm:mb-[31px] sm:max-w-[220px] sm:flex-col",
+                        { "sm:[&]:max-w-[282px]": isRussianLocale }
+                    )}
+                >
                     <Animated.P
                         style={{ transform: "translateZ(0)" }}
                         initial={{ opacity: 0 }}
                         animate={startAnimations ? { opacity: 1 } : {}}
                         transition={{ duration: 0.5, delay: 1.9 }}
                         className="will-change-[opacity] mt-[50px] mr-[75px] max-w-[376px] flex-1 xl:mt-[18px] xl:mr-0 xl:max-w-[282px] tb:mt-[3px] sm:mt-0 sm:mb-[6px]"
-                    >
-                        Seamlessly process crypto payments with near-instant settlements and robust security.{" "}
-                        <strong>Unlock global markets and&nbsp;save on&nbsp;fees.</strong>
-                    </Animated.P>
+                        dangerouslySetInnerHTML={{ __html: t("home.hero.text") }}
+                    ></Animated.P>
                     <Animated.Div
                         style={{ transform: "translateZ(0)" }}
                         initial={{ opacity: 0 }}
@@ -113,7 +148,8 @@ export const HeroSection = () => {
                             "pl-[18px] mt-[-128px] mr-auto mb-[-110px] w-full max-w-[666px] flex items-start xl:mt-[-134px] xl:ml-[-50px] xl:mb-[-99px] xl:pl-[0] xl:mr-0 xl:max-w-[595px] lg:mt-[-56px] md:ml-[-90px] md:max-w-[480px]",
                             "tb:absolute tb:top-[50px] tb:right-[-63px] tb:translate-x-[6.5%] tb:max-w-[355px]",
                             "sm:top-[27%] sm:w-[40%] sm:max-w-[220px]",
-                            "xs:w-full xs:max-w-[226px] xs:top-[8%] xs:right-[-104px] xs:translate-x-[39%] xs:flex-col xs:gap-[0px]"
+                            "xs:w-full xs:max-w-[226px] xs:top-[8%] xs:right-[-104px] xs:translate-x-[39%] xs:flex-col xs:gap-[0px]",
+                            { "lg:[&]:ml-[-80px] lg:[&]:mr-[-60px] lg:[&]:mb-[11px] sm:[&]:mr-0 sm:[&]:ml-[-60px]": isRussianLocale }
                         )}
                     >
                         <Animated.Div
@@ -136,17 +172,17 @@ export const HeroSection = () => {
                                 "sm:after:translate-x-[-59%] sm:after:translate-y-[-50%] sm:after:rounded-[20px]  xs:after:translate-x-[-56%] xs:after:w-[59%]"
                             )}
                         >
-                       <div className="w-full relative z-[1] sm:ml-[-8px]">
-                         <ResponsiveImage
-                                className=""
-                                src="homepage/hero/right-card-1.png"
-                                alt="Right card"
-                                aspectRatio={462 / 464}
-                                priority
-                                sizes="(max-width: 767px) 100vw, 50vw"
-                            />
-                         
-                              {/* <ResponsiveImage
+                            <div className="w-full relative z-[1] sm:ml-[-8px]">
+                                <ResponsiveImage
+                                    className=""
+                                    src="homepage/hero/right-card-1.png"
+                                    alt="Right card"
+                                    aspectRatio={462 / 464}
+                                    priority
+                                    sizes="(max-width: 767px) 100vw, 50vw"
+                                />
+
+                                {/* <ResponsiveImage
                                 className="absolute top-0 left-0 w-full h-full"
                                 src="homepage/hero/mobile-border-1.png"
                                 alt="Border"
@@ -155,9 +191,7 @@ export const HeroSection = () => {
                                 aspectRatio={395 / 479}
                                 priority
                             /> */}
-                       </div>
-                           
-                            
+                            </div>
                         </Animated.Div>
                     </Animated.Div>
                     <Animated.Div
@@ -167,17 +201,21 @@ export const HeroSection = () => {
                         transition={{ duration: 0.5, delay: 1.7 }}
                         className="will-change-[opacity] mt-[48px] max-w-[217px] flex-1 xl:mt-[14px] xl:max-w-[180px] tb:mt-[1px] sm:max-w-[unset]"
                     >
-                        <p className="mb-[8px] text-[36px] leading-[100%] font-bold xl:mb-[5px] xl:text-[30px] xl:leading-[120%] sm:hidden">With PayKilla</p>
+                        <p className="mb-[8px] text-[36px] leading-[100%] font-bold xl:mb-[5px] xl:text-[30px] xl:leading-[120%] sm:hidden">
+                            {t("home.hero.right.title")}
+                        </p>
                         <p className="tb:max-w-[165px] tb:text-right sm:max-w-[unset] sm:text-left [&_br]:sm:hidden">
-                            <span className="text-orange">Killa [&rsquo;kɪlə]:</span>{" "}
-                            <span className="text-t-gray">
-                                cool,
-                                <br /> highly skilled
-                            </span>
+                            <span className="text-orange" dangerouslySetInnerHTML={{ __html: t("home.hero.right.word") }}></span>{" "}
+                            <span className="text-t-gray" dangerouslySetInnerHTML={{ __html: t("home.hero.right.description") }}></span>
                         </p>
                     </Animated.Div>
                 </div>
-                <div className="mt-[-105px] ml-[-2px] flex items-center gap-[64px] justify-between xl:mt-[-88px] xl:ml-0 tb:mt-0 tb:flex-row-reverse sm:gap-[10px] sm:items-stretch sm:flex-col-reverse">
+                <div
+                    className={clsx(
+                        "mt-[-105px] ml-[-2px] flex items-center gap-[64px] justify-between xl:mt-[-88px] xl:ml-0 tb:mt-0 tb:flex-row-reverse sm:gap-[10px] sm:items-stretch sm:flex-col-reverse",
+                        { "tb:[&]:gap-[32px]": isRussianLocale }
+                    )}
+                >
                     <div className="overflow-hidden">
                         <Animated.Div
                             style={{ transform: "translateZ(0)" }}
@@ -187,7 +225,7 @@ export const HeroSection = () => {
                             transition={{ duration: 0.5, delay: 1.7 }}
                         >
                             <Button action="secondary" href={process.env.NEXT_PUBLIC_BUTTONS_CALL_URL}>
-                                BOOK A CALL
+                                {t("bookACallButtonText")}
                             </Button>
                         </Animated.Div>
                     </div>
@@ -199,7 +237,7 @@ export const HeroSection = () => {
                             animate={startAnimations ? { y: 0 } : {}}
                             transition={{ duration: 0.5, delay: 1.7 }}
                         >
-                            <Button href={process.env.NEXT_PUBLIC_BUTTONS_GET_STARTED_URL}>GET STARTED</Button>
+                            <Button href={process.env.NEXT_PUBLIC_BUTTONS_GET_STARTED_URL}> {t("getStartedButtonText")}</Button>
                         </Animated.Div>
                     </div>
                 </div>

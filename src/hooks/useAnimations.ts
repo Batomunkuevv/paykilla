@@ -1,5 +1,5 @@
 import { useContext } from "react";
 
-import { AnimationsContext } from "@context";
+import { AnimationsContext } from "@/providers";
 
 export const useAnimations = () => useContext(AnimationsContext);

@@ -2,10 +2,11 @@
 
 import { useEffect, useRef, useState, useCallback } from "react";
 import clsx from "clsx";
+import { useTranslation } from "react-i18next";
+
+import { i18n } from "@lib";
 
 import { FaqItemType } from "@t";
-
-import { faq } from "@data";
 
 import { Button, FaqItem, ResponsiveImage } from "@components";
 
@@ -18,6 +19,9 @@ export const FaqSection = () => {
     const bodyRef = useRef<HTMLDivElement | null>(null);
     const chatRef = useRef<HTMLDivElement | null>(null);
 
+    const { t } = useTranslation();
+    const faq = t("home.faq.list", { returnObjects: true }) as FaqItemType[];
+    const isRussianLocale = i18n.language === "ru";
     const otherFaq = [...faq].slice(0, -1);
     const lastFaq = [...faq].slice(-1)[0];
 
@@ -92,14 +96,14 @@ export const FaqSection = () => {
                             otherFaq.map((faq, i) => (
                                 <FaqItem
                                     key={i}
-                                    textClassName="max-w-[375px] xs:max-w-[76%]"
+                                    textClassName={clsx("max-w-[375px] xs:max-w-[76%]", { "[&]:max-w-[unset]": isRussianLocale })}
                                     setCurrentFaq={setCurrentFaq}
                                     setIsOpenChat={setIsOpenChat}
                                     faq={faq}
                                 />
                             ))}
                         <Button href={process.env.NEXT_PUBLIC_BUTTONS_GET_STARTED_URL} className="m-auto md:col-[2/3] xs:mt-[20px] xs:order-[2]">
-                            GET STARTED
+                            {t("getStartedButtonText")}
                         </Button>
                         {lastFaq && (
                             <FaqItem
@@ -151,7 +155,7 @@ export const FaqSection = () => {
                                         />
                                     </svg>
                                 </span>
-                                BACK TO QUESTIONS
+                                {t("home.faq.backButtonText")}
                             </button>
                             <div className="ml-auto mb-[36px] w-fit flex items-end gap-[20px] max-w-[70.4%] xl:mb-[30px] xl:max-w-[76%] md:mb-[20px] md:flex-col md:gap-[10px] md:max-w-[unset] sm:max-w-[77%]">
                                 <p
@@ -164,7 +168,7 @@ export const FaqSection = () => {
                                         "sm:w-[39px] sm:h-[39px] sm:text-[11px]"
                                     )}
                                 >
-                                    You
+                                    {i18n.language === "ru" ? "Вы" : "You"}
                                 </div>
                             </div>
                             <div

@@ -3,11 +3,16 @@
 import clsx from "clsx";
 import { useRef } from "react";
 import { useInView } from "motion/react";
+import { useTranslation } from "react-i18next";
+import { i18n } from "@lib";
 
 import { Button, ResponsiveImage, BlurBall, Animated } from "@components";
 
 export const ContactUsCtaSection = () => {
     const sectionRef = useRef(null);
+
+    const { t } = useTranslation();
+    const isRussianLocale = i18n.language === "ru";
 
     const isInView = useInView(sectionRef, { amount: 0.8, once: true });
 
@@ -15,13 +20,18 @@ export const ContactUsCtaSection = () => {
         <section ref={sectionRef} className="section xl:pt-[59px] md:pt-0">
             <div className="container relative z-[1]">
                 <p className="subheading tb:mb-[40px] sm:mb-[32px]">
-                    <span className="text-t-orange">[7]</span> contact us
+                    <span className="text-t-orange">[7]</span> {t("home.contactUsCta.caption")}
                 </p>
                 <h2
                     className={clsx(
                         "pl-[24.7%] mt-[-43px] mb-[37px] h2 xl:pl-[25.8%] xl:mt-[-37px] xl:mb-[74px] xl:max-w-[92.5%] lg:max-w-[96%]",
                         "tb:p-0 tb:mt-0 tb:mb-[40px] tb:max-w-[96.5%]",
-                        "sm:mb-[30px] sm:max-w-[unset]"
+                        "sm:mb-[30px] sm:max-w-[unset]",
+                        {
+                            "[&]:text-[112px] 2xl:[&]:pl-[20%] xl:[&]:pl-[16%] xl:[&]:text-[103px] xl:[&]:max-w-[unset] lg:[&]:pl-[20%] lg:[&]:max-w-[92%] lg:[&]:text-[80px]":
+                                isRussianLocale,
+                            "md:[&]:max-w-[95%] md:[&]:text-[64px] tb:[&]:pl-0 tb:[&]:max-w-[97%] sm:[&]:max-w-[unset] sm:[&]:text-[48px] sm:[&_br]:hidden": isRussianLocale,
+                        }
                     )}
                 >
                     <span className="pb-[16px] mb-[-15px] block overflow-hidden sm:inline">
@@ -32,8 +42,14 @@ export const ContactUsCtaSection = () => {
                             animate={isInView ? { y: 0 } : false}
                             transition={{ duration: 0.5 }}
                         >
-                            If&nbsp;you have&nbsp;any
-                            <span className="ml-[9.2%] block w-fit 2xl:ml-[4%] xl:m-0">questions or&nbsp;need</span>
+                            <span dangerouslySetInnerHTML={{ __html: t("home.contactUsCta.title.firstPart") }} />
+                            {" "}
+                            <span
+                                className={clsx("ml-[9.2%] block w-fit 2xl:ml-[4%] xl:m-0", {
+                                    "[&]:ml-[4%] 2xl:[&]:ml-[1%] xl:[&]:ml-[4%] lg:[&]:ml-[2%] sm:[&]:ml-0 sm:[&]:inline": isRussianLocale,
+                                })}
+                                dangerouslySetInnerHTML={{ __html: t("home.contactUsCta.title.secondPart") }}
+                            />
                         </Animated.Span>
                     </span>
                     <span className="pb-[16px] mb-[-15px] ml-auto block w-fit tb:mt-[2px] sm:m-0 sm:inline overflow-hidden">
@@ -43,10 +59,10 @@ export const ContactUsCtaSection = () => {
                             initial={{ y: "100%" }}
                             animate={isInView ? { y: 0 } : false}
                             transition={{ duration: 0.5, delay: 0.5 }}
-                        >
-                            assistance, please
-                        </Animated.Span>
+                            dangerouslySetInnerHTML={{ __html: t("home.contactUsCta.title.thirdPart") }}
+                        />
                     </span>
+                    {" "}
                     <span className="ml-auto relative top-[2px] left-[-73px] block w-fit overflow-hidden xl:top-0 xl:left-[-69px] tb:top-0 tb:left-[-62px] sm:m-0 sm:static sm:inline">
                         <Animated.Span
                             style={{ transform: "translateZ(0)" }}
@@ -54,14 +70,12 @@ export const ContactUsCtaSection = () => {
                             initial={{ y: "100%" }}
                             animate={isInView ? { y: 0 } : false}
                             transition={{ duration: 0.5, delay: 1 }}
-                        >
-                            {" "}
-                            fill out the form
-                        </Animated.Span>
+                            dangerouslySetInnerHTML={{ __html: t("home.contactUsCta.title.fourthPart") }}
+                        />
                     </span>
                 </h2>
                 <Button className="sm:mb-[18px]" href="/contact-us">
-                    CONTACT US
+                    {t("home.contactUsCta.buttonText")}
                 </Button>
                 <ResponsiveImage
                     className={clsx(

@@ -26,6 +26,9 @@ const config: Config = {
             xs: {
                 max: "479px",
             },
+            xxs: {
+                max: "413px",
+            },
         },
         extend: {
             colors: {
@@ -50,6 +53,7 @@ const config: Config = {
             },
             fontFamily: {
                 "familijen-grotesk": ["var(--font-familijen-grotesk)", "sans-serif"],
+                "museo-sans-cyrl": ["var(--font-museo-sans-cyrl)", "sans-serif"],
             },
             keyframes: {
                 spinner: {

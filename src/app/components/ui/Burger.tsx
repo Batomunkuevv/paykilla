@@ -2,16 +2,18 @@
 
 import { useState, MouseEvent } from "react";
 import clsx from "clsx";
+import { i18n } from "@lib";
 
 import { headerMenu } from "@/data";
 
-import { ClassNameProp } from "@t";
+import { ClassNameProp, LocaleType } from "@t";
 
-import { Logo, Menu, Button, CloseButton } from "@components";
-// import LanguageBar from "./LanguageBar";
+import { Logo, Menu, Button, CloseButton, LanguageSwitcher } from "@components";
 
 export const Burger = ({ className }: ClassNameProp) => {
     const [isOpenMenu, setIsOpenMenu] = useState(false);
+
+    const headerMenuByLocale = headerMenu[i18n?.language as LocaleType];
 
     const handleBurgerClick = () => {
         setIsOpenMenu(true);
@@ -52,17 +54,17 @@ export const Burger = ({ className }: ClassNameProp) => {
                 <div onClick={closeMenu} className="absolute inset-0 bg-overlay"></div>
                 <div
                     className={clsx(
-                        "py-[34px] px-[20px] ml-auto relative bg-black w-[calc(100%-20px)] max-w-[389px] h-full flex flex-col overflow-auto has-scrollbar",
+                        "pt-[31px] px-[20px] pb-[34px] ml-auto relative bg-black w-[calc(100%-20px)] max-w-[389px] h-full flex flex-col overflow-auto has-scrollbar",
                         "sm:py-[23px] xs:max-w-[271px]"
                     )}
                     onClick={handleBurgerBodyClick}
                 >
-                    <div className="mb-[40px] flex items-center justify-between gap-x-[32px] sm:mb-[24px]">
+                    <div className="mb-[39px] flex items-center justify-between gap-x-[32px] sm:mb-[24px]">
                         <Logo type="white" className="w-full max-w-[175px] sm:max-w-[154px]" />
                         <CloseButton onClick={closeMenu} />
                     </div>
-                    <Menu items={headerMenu} className="mb-[30px] text-t-white uppercase" />
-                    {/* <LanguageBar></LanguageBar> */}
+                    <Menu items={headerMenuByLocale} className="mb-[29px] text-t-white uppercase sm:mb-[23px]" />
+                    <LanguageSwitcher />
                     <Button href={process.env.NEXT_PUBLIC_BUTTONS_CALL_URL} className="mt-auto w-full">
                         BOOK A CALL
                     </Button>

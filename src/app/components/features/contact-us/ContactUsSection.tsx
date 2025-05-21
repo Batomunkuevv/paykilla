@@ -3,22 +3,24 @@
 import clsx from "clsx";
 import { useEffect, useState } from "react";
 import { useForm } from "react-hook-form";
+import { useTranslation } from "react-i18next";
 
 import { FormData, StatusModalType } from "@t";
 
 import Link from "next/link";
 import { Logo, Button, InputField, CheckboxField, TextareaField, ResponsiveImage, StatusModal } from "@components";
 
-const successModal = {
-    title: "Thank you for the appeal!",
-    text: "We'll get back to you as soon as possible!",
-};
-const errorModal = {
-    title: "Please try again later or contact us another way.",
-};
-
 export const ContactUsSection = () => {
     const [statusModal, setStatusModal] = useState<StatusModalType | null>(null);
+
+    const { t } = useTranslation("contact-us");
+    const successModal = {
+        title: t("successModal.title"),
+        text: t("successModal.text"),
+    };
+    const errorModal = {
+        title: t("errorModal.title"),
+    };
 
     const {
         register,
@@ -69,15 +71,12 @@ export const ContactUsSection = () => {
                 <div className="flex justify-between gap-[40px] relative tb:flex-col sm:gap-[36px]">
                     <div className="flex-1 max-w-[416px] xl:max-w-[414px] tb:max-w-[unset]">
                         <h1 className="subheading mb-[31px] sm:mb-[30px]">
-                            <span className="text-t-orange">[9]</span> contact us
+                            <span className="text-t-orange">[9]</span> {t("hero.title")}
                         </h1>
-                        <p className="mb-[27px] max-w-[365px] xl:mb-[40px] xl:max-w-[286px] tb:mb-0 sm:max-w-[277px]">
-                            If&nbsp;you have any questions or&nbsp;need assistance,
-                            <span className="font-semibold text-t-orange">
-                                {" "}
-                                please fill out the form below and our team will get back to&nbsp;you promptly.
-                            </span>
-                        </p>
+                        <p
+                            className="mb-[27px] max-w-[365px] xl:mb-[40px] xl:max-w-[286px] tb:mb-0 sm:max-w-[277px]"
+                            dangerouslySetInnerHTML={{ __html: t("hero.text") }}
+                        />
                         <ResponsiveImage
                             className={clsx(
                                 "ml-[-46%] mb-[-64px] xl:rotate-[-6deg] xl:ml-[-37%] lg:mb-[-48px] md:mb-0",
@@ -93,45 +92,45 @@ export const ContactUsSection = () => {
                     <div className="flex-1 max-w-[941px] xl:max-w-[837px] tb:max-w-[unset]">
                         <form onSubmit={handleSubmit(onSubmit)} className="flex flex-col gap-[20px]">
                             <InputField
-                                label="Your name"
-                                placeholder="Mary White"
+                                label={t("hero.form.name.label")}
+                                placeholder={t("hero.form.name.placeholder")}
                                 error={errors.name}
                                 {...register("name", {
-                                    required: "Name is required",
-                                    validate: (value) => value.trim().length >= 2 || "Min 2 characters",
+                                    required: t("hero.form.name.required"),
+                                    validate: (value) => value.trim().length >= 2 || t("hero.form.name.error"),
                                 })}
                             />
                             <InputField
-                                label="Your email"
-                                placeholder="example@mail.com"
+                                label={t("hero.form.email.label")}
+                                placeholder={t("hero.form.email.placeholder")}
                                 type="email"
                                 error={errors.email}
                                 {...register("email", {
-                                    required: "Email is required",
+                                    required: t("hero.form.email.required"),
                                     pattern: {
                                         value: /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/i,
-                                        message: "Invalid email format",
+                                        message: t("hero.form.email.error"),
                                     },
                                 })}
                             />
                             <TextareaField
                                 className="mt-[-2px] sm:mt-[-1px]"
-                                label="Your message"
-                                placeholder="Text your message"
+                                label={t("hero.form.message.label")}
+                                placeholder={t("hero.form.message.placeholder")}
                                 error={errors.message}
                                 {...register("message", {
-                                    required: "Message is required",
-                                    validate: (value) => value.trim().length >= 2 || "Min 2 characters",
+                                    required: t("hero.form.message.required"),
+                                    validate: (value) => value.trim().length >= 2 || t("hero.form.message.error"),
                                 })}
                             />
                             <CheckboxField
                                 className="mt-[-3px]"
-                                label="I&nbsp;agree to&nbsp;the terms and conditions as&nbsp;set out by&nbsp;the user agreement"
+                                label={t("hero.form.policy.label")}
                                 error={errors.consent}
-                                {...register("consent", { required: "Please confirm that you accept the agreement" })}
+                                {...register("consent", { required: t("hero.form.policy.required") })}
                             />
                             <Button className="mt-[20px] tb:w-full" type="submit" isLoading={isSubmitting}>
-                                {isSubmitting ? "Sending" : "SEND A MESSAGE"}
+                                {isSubmitting ? t("hero.form.buttonTextSending") : t("hero.form.buttonText")}
                             </Button>
                         </form>
                     </div>
